@@ -22,7 +22,8 @@ Many fashion enthusiasts who care about the environment struggle to find clothin
 ## 👩‍💻 Process
 1. **User Research** – Surveys and interviews to understand needs.  
 2. **Wireframing** – Paper sketches and early concept validation.  
-3. **Prototyping** – High-fidelity Figma design. 
+3. **Prototyping** – High-fidelity Figma design.
+4. **User Testing** – Iterations based on usability feedback. 
 5. **Development** – Functional SwiftUI prototype.  
 
 ---
