@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct DetailsClothes: View {
     let clothe : Clothe
     @Environment(\.openURL) var openURL

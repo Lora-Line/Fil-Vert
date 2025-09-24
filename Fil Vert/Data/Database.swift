@@ -420,20 +420,6 @@ let clothes: [Clothe] = [
     ),
 
     Clothe(
-        name: "Blouse Basile",
-        brand: BrandName.balzac,
-        price: 110.0,
-        image: "blouse_basile_balzac",
-        description: "Blouse fluide et élégante en coton bio, idéale pour un look casual elegant.",
-        material: "100% coton bio",
-        tags: [Tag.qualite],
-        type: TypeClothe.haut,
-        style: [StylesClothe.elegant, StylesClothe.minimaliste, StylesClothe.boheme],
-        morphologyFit: [MorphologyName.h, MorphologyName.v, MorphologyName.a],
-        womenOrMensWear: .femme
-    ),
-
-    Clothe(
         name: "Blouse fleurie",
         brand: BrandName.lesSublimes,
         price: 120.0,
@@ -444,20 +430,6 @@ let clothes: [Clothe] = [
         type: TypeClothe.haut,
         style: [StylesClothe.boheme, StylesClothe.elegant, StylesClothe.decontracte],
         morphologyFit: [MorphologyName.a, MorphologyName.o, MorphologyName.x],
-        womenOrMensWear: .femme
-    ),
-
-    Clothe(
-        name: "Blazer oversize",
-        brand: BrandName.petiteAndSoWhat,
-        price: 160.0,
-        image: "blazer_oversize_petite_&_so_what",
-        description: "Blazer oversize en tissu éco-responsable, parfait pour un look elegant et décontracté.",
-        material: "Mélange de fibres écoresponsables",
-        tags: [Tag.qualite],
-        type: TypeClothe.veste,
-        style: [StylesClothe.elegant, StylesClothe.decontracte, StylesClothe.minimaliste],
-        morphologyFit: [MorphologyName.x, MorphologyName.h, MorphologyName.o],
         womenOrMensWear: .femme
     ),
 
@@ -514,20 +486,6 @@ let clothes: [Clothe] = [
         type: TypeClothe.chaussures,
         style: [StylesClothe.elegant, StylesClothe.elegant, StylesClothe.boheme],
         morphologyFit: [MorphologyName.a, MorphologyName.h, MorphologyName.o, MorphologyName.v, MorphologyName.x], // toutes morphologies
-        womenOrMensWear: .femme
-    ),
-
-    Clothe(
-        name: "Cardigan long",
-        brand: BrandName.ekyog,
-        price: 145.0,
-        image: "cardigan_long_ekyog",
-        description: "Cardigan long en laine recyclée, parfait pour un look cosy et responsable.",
-        material: "Laine recyclée",
-        tags: [Tag.qualite, Tag.upcycler],
-        type: TypeClothe.haut,
-        style: [StylesClothe.decontracte, StylesClothe.boheme, StylesClothe.minimaliste],
-        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.x],
         womenOrMensWear: .femme
     ),
 
@@ -839,7 +797,7 @@ let clothes: [Clothe] = [
     ),
 
     Clothe(
-        name: "Tee-shirt Martel marine",
+        name: "T-shirt Martel marine",
         brand: BrandName.balzac,
         price: 50.00,
         image: "tee-shirt_martel_marine",
@@ -1001,20 +959,6 @@ let clothes: [Clothe] = [
         style: [StylesClothe.minimaliste, StylesClothe.elegant, StylesClothe.decontracte], // 3 styles
         morphologyFit: [MorphologyName.a, MorphologyName.h, MorphologyName.v],
         womenOrMensWear: .homme
-    ),
-
-    Clothe(
-        name: "Sweat recyclé",
-        brand: BrandName.hopaal,
-        price: 85.00,
-        image: "sweat_recycle_hopaal",
-        description: "Sweat en coton recyclé, doux et durable, fabriqué en France.",
-        material: "Coton recyclé",
-        tags: [ Tag.upcycler, Tag.madeInFrance],
-        type: TypeClothe.haut,
-        style: [StylesClothe.streetwear, StylesClothe.decontracte, StylesClothe.minimaliste], // 3 styles
-        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.a],
-        womenOrMensWear: .unisex
     ),
 
     Clothe(
