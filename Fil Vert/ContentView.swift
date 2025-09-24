@@ -15,10 +15,10 @@ struct ContentView: View {
                 Tab("Suggestion", systemImage: "cabinet") {
                     SuggestionPage()
                 }
-                Tab("Recherche", systemImage: "magnifyingglass") {
+                Tab("Marques", systemImage: "magnifyingglass") {
                     SearchPage()
                 }
-                Tab("Carte", systemImage: "map") {
+                Tab("Magasins", systemImage: "map") {
                     MapPage()
                 }
                 Tab("Infos", systemImage: "apple.meditate") {

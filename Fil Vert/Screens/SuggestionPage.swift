@@ -26,9 +26,11 @@ struct SuggestionPage: View {
     @State var searchText: String = ""
     @StateObject var user = users[0]
     @State var selectedFilters: [TypeClothe] = []
-    @State private var isExpanded: Bool = false
+    @State private var isExpanded: Bool = true
     @Namespace private var filterNamespace
     @State var generatedItems = [AnyView]()
+    
+    @State private var hasScrolled: Bool = false
     /*
      Données filtrées (vêtements)
      - Filtre par type (selectedFilters).
@@ -39,7 +41,7 @@ struct SuggestionPage: View {
             let matchesFilters: Bool = selectedFilters.isEmpty ||
             selectedFilters.contains(cloth.type)
             
-            let goodForUser: Bool = user.sexe.rawValue == cloth.womenOrMensWear.rawValue && cloth.morphologyFit.contains(user.morphology) && user.styles.contains(cloth.style)
+            let goodForUser: Bool = (user.sexe.rawValue == "Non-binaire" || user.sexe.rawValue == cloth.womenOrMensWear.rawValue) && cloth.morphologyFit.contains(user.morphology) && user.styles.contains { cloth.style.contains($0) }
                 
                 return matchesFilters && goodForUser
             
@@ -61,7 +63,7 @@ struct SuggestionPage: View {
             items.append(AnyView(SuggestionRow(clothe: clothe, fact: "")))
             isFactFlags.append(false)
             // Decide if we can add a fact after this clothing
-            guard searchText.isEmpty else { continue }
+//            guard searchText.isEmpty else { continue }
 
             // Random chance (similar to before but controllable)
             let shouldTryInsertFact = Bool.random()
@@ -104,34 +106,32 @@ struct SuggestionPage: View {
                 
                 
                     VStack{
-                        /*
-                         Header (outside scroll): Bonjour + Accroche, shows/hides with scroll
-                         */
-                      /*
-                            VStack(spacing: 8) {
-                                Text("Bonjour \(user.name)!")
-                                    .gupterFont(size: 36.6)
-                                    .padding(.top, 24)
+                       
+                        ZStack(alignment: .topLeading) {
+                            // Sous-texte qui disparait en scrollant
+                            if !hasScrolled {
                                 Text("Ce que vous portez raconte une histoire, choisissez celle qui protège la planète.")
-                                    .foregroundStyle(Color.deepGreen)
-                                    .SFProFont(weight: .regular, size: 16)
+                                    .SFProFont(weight: .regular, size: 17)
+                                    .frame(maxWidth: .infinity, alignment: .center)
                                     .padding(.horizontal)
                                     .multilineTextAlignment(.center)
-                                    .padding(.bottom, 20)
-                 
-                            }*/
-                        ZStack(alignment: .topLeading) {
+                                    .zIndex(1)
+                                    .transition(.move(edge: .top).combined(with: .opacity))
+                            }
                             //FILTRES
                             if #available(iOS 26.0, *) {
-                                
-                                
                                 GlassEffectContainer(spacing: 12.0) {
                                     HStack() {
                                         //Toggle button (glass)
-                                        Button(action: { withAnimation { isExpanded.toggle() } }) {
-                                            Image(systemName: "line.3.horizontal.decrease")
+                                        Button(action: {
+                                            
+                                            withAnimation {
+                                                isExpanded.toggle()
+                                            }
+                                        }) {
+                                            Image(systemName: "slider.vertical.3")
                                                 .frame(width: 32, height: 44)
-                                                .font(.system(size: 20, weight: .semibold))
+                                                .font(.system(size: 20, weight:  .semibold))
                                         }
                                         .buttonStyle(.glass)
                                         .zIndex(10)
@@ -139,17 +139,23 @@ struct SuggestionPage: View {
                                         .glassEffectID("filter.toggle.search", in: filterNamespace)
                                         
                                         if isExpanded {
-                                            
                                             ScrollView(.horizontal, showsIndicators: false) {
                                                 HStack(spacing: 8) {
                                                     ForEach(TypeClothe.allCases, id: \.self) { type in
+                                                        
                                                         Button {
-                                                            if selectedFilters.contains(type) {
-                                                                selectedFilters.removeAll { $0 == type }
-                                                            } else {
-                                                                selectedFilters.append(type)
+                                                            
+                                                            withAnimation {
+                                                                if selectedFilters.contains(type) {
+                                                                
+                                                                    selectedFilters.removeAll { $0 == type }
+                                                                } else {
+                                                                    
+                                                                    selectedFilters.append(type)
+                                                                }
+                                                                
+                                                                generateItem()
                                                             }
-                                                            generateItem()
                                                         } label: {
                                                             Text(type.rawValue)
                                                                 .padding(.vertical, 8)
@@ -159,6 +165,7 @@ struct SuggestionPage: View {
                                                                 .foregroundStyle(selectedFilters.contains(type) ? .almostWhite : .deepGreen)
                                                             
                                                         }
+                                                        .zIndex(999)
                                                         .glassEffectID("filter.tag.\(type.rawValue)", in: filterNamespace)
                                                     }
                                                 }
@@ -167,6 +174,7 @@ struct SuggestionPage: View {
                                         Spacer()
                                     }
                                 }.zIndex(10)
+                                    .padding(.top, hasScrolled ? 0 : 50)
                                 
                             } else {
                                 ScrollView(.horizontal, showsIndicators: false) {
@@ -174,10 +182,12 @@ struct SuggestionPage: View {
                                     HStack {
                                         ForEach(TypeClothe.allCases, id: \.self) { type in
                                             Button {
-                                                if selectedFilters.contains(type) {
-                                                    selectedFilters.removeAll { $0 == type }
-                                                } else {
-                                                    selectedFilters.append(type)
+                                                withAnimation {
+                                                    if selectedFilters.contains(type) {
+                                                        selectedFilters.removeAll { $0 == type }
+                                                    } else {
+                                                        selectedFilters.append(type)
+                                                    }
                                                 }
                                             } label: {
                                                 Text(type.rawValue)
@@ -190,10 +200,12 @@ struct SuggestionPage: View {
                                     }
                                     .padding(.horizontal, 20)
                                     .padding(.vertical, 8)
+                                    
                                 }
                                 .background(Color.floralWhite.opacity(0.95))
                             }
                             ScrollView(.vertical) {
+                                Spacer(minLength: 130)
                                 VStack(spacing: 0) {
                                     
                                     // Grille
@@ -210,8 +222,9 @@ struct SuggestionPage: View {
                                     // Texte de fin
                                     VStack {
                                         Spacer()
-                                        Text("Vous êtes arrivé·e à la fin de la page.")
-                                        Text("Merci d’avoir choisi la mode responsable !")
+                                        filteredData.isEmpty ? Text("Aucun vêtement ne correspond à vos critères.\n Essayez d'élargir votre sélection.") :
+                                        Text("Vous êtes arrivé·e à la fin de la page. \n Merci d’avoir choisi la mode responsable !")
+                                        
                                     }
                                     .SFProFont(weight: .medium, size: 14)
                                     .multilineTextAlignment(.center)
@@ -223,25 +236,40 @@ struct SuggestionPage: View {
                                 .onAppear{
                                     generateItem()
                                 }
+                            }.onScrollGeometryChange(for: CGFloat.self) { proxy in
+                                proxy.contentOffset.y
+                            } action: { y, _  in
+                                withAnimation(.easeInOut) {
+                                    hasScrolled = y > 5 // ICI : règle le seuil comme tu veux
+                                }
                             }
-                        }
+                        }.zIndex(10)
                             
                     }
             }.toolbar {
-                ToolbarItem(placement: .principal) {
-                    VStack(spacing: 8) {
-                        Text("Bonjour \(user.name)!")
-                            .gupterFont(size: 36.6)
-                            .padding(.top, 24)
-                        Text("Ce que vous portez raconte une histoire, choisissez celle qui protège la planète.")
-                            .SFProFont(weight: .regular, size: 16)
-                            .padding(.horizontal)
-                            .multilineTextAlignment(.center)
-                            //.padding(.bottom, 20)
-                        
+                    ToolbarItem(placement: .principal) {
+                        VStack(alignment: .center, spacing: 8) {
+                            Text("Bonjour \(user.name)!")
+                                .gupterFont(size: 36)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                                .padding(.top, 10)
+                                .padding(.vertical, 8)
+                            
+//                            // Sous-texte qui disparait en scrollant
+//                            if !hasScrolled {
+//                                Text("Ce que vous portez raconte une histoire, choisissez celle qui protège la planète.")
+//                                    .SFProFont(weight: .regular, size: 17)
+//                                    .frame(maxWidth: .infinity, alignment: .center)
+//                                    .padding(.horizontal)
+//                                    .multilineTextAlignment(.center)
+//                                .transition(.opacity)}
+                            
+                        }
+                        //.frame(height: 170)
+                        .animation(.default, value: hasScrolled)
                     }
-                }
-            }.scrollIndicators(.hidden)
+            }
+                .scrollIndicators(.hidden)
                 .navigationBarTitleDisplayMode(.inline)
         }
     }

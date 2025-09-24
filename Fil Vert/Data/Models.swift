@@ -18,7 +18,7 @@ struct Clothe: Identifiable{
     var material: String
     var tags: [Tag]
     let type: TypeClothe
-    let style: StylesClothe
+    let style: [StylesClothe]
     let morphologyFit: [MorphologyName]
     let womenOrMensWear:WomenMenBothWear
 }
@@ -130,7 +130,6 @@ enum Sexes:String {
 
 enum Tag:String, CaseIterable {
     case friperie = "Friperie"
-    case eco = "Eco-responsable"
     case bio = "Biologique"
     case upcycler = "Upcycler"
     case transparence = "Transparence"

@@ -12,12 +12,12 @@ struct MensurationsSection: View {
     @ObservedObject var measurement = users[0].measurement
     
     var onCalculate: () -> Void
-    
+
 
     var body: some View {
         VStack {
             HStack{
-                Text("Mensurations").gupterFont(size:24)
+                Text("Mensurations").gupterFont(size:30)
                 Spacer()
             }
             .padding(.bottom,4)
@@ -26,40 +26,33 @@ struct MensurationsSection: View {
                 Spacer()
             }
             VStack(alignment: .leading, spacing: 12) {
-                HStack {
-                    Text("Taille (cm)")
-                        .SFProFont(weight: .regular, size:16)
-                    TextField(value: $measurement.height, format: .number, prompt: Text("175")) {}
-                        .keyboardType(.decimalPad)
-                        .multilineTextAlignment(.trailing)
-                        .SFProFont(weight:.mediumTerra, size:16)
-                }
-                Divider()
+
                 HStack {
                     Text("Tour d'épaules (cm)")
-                        .SFProFont(weight: .regular, size:16)
+                        .SFProFont(weight: .regular, size:19)
                     TextField(value: $measurement.bustSize, format: .number, prompt: Text("70")) {}
                         .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
-                        .SFProFont(weight:.mediumTerra, size:16)
+                        .SFProFont(weight:.mediumTerra, size:19)
+                    
                 }
                 Divider()
                 HStack {
                     Text("Tour de taille (cm)")
-                        .SFProFont(weight: .regular, size:16)
+                        .SFProFont(weight: .regular, size:19)
                     TextField(value: $measurement.waistSize, format: .number, prompt: Text("95")) {}
                         .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
-                        .SFProFont(weight:.mediumTerra, size:16)
+                        .SFProFont(weight:.mediumTerra, size:19)
                 }
                 Divider()
                 HStack {
                     Text("Tour de hanches (cm)")
-                        .SFProFont(weight: .regular, size:16)
+                        .SFProFont(weight: .regular, size:19)
                     TextField(value: $measurement.hipsSize, format: .number, prompt: Text("95")) {}
                         .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
-                        .SFProFont(weight:.mediumTerra, size:16)
+                        .SFProFont(weight:.mediumTerra, size:19)
                 }
                 Divider()
                 HStack{
@@ -67,8 +60,8 @@ struct MensurationsSection: View {
                     Button(action: {
                         onCalculate()
                     }) {
-                        Text("Calculer ma morphologie")
-                            .SFProFont(weight: .mediumTerra, size:16)
+                        Text("Re-calculer ma morphologie")
+                            .SFProFont(weight: .mediumTerra, size:19)
                     }
                     .padding(8)
                     Spacer()

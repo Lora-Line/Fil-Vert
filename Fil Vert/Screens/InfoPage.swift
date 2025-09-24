@@ -52,7 +52,8 @@ struct InfoPage: View {
                             HStack{
                                 Text("Conseils")
                                 Spacer()
-                            }
+                            }.padding(.bottom,4)
+                                
                             AdviceCard()
                                 .padding(.vertical)
                             HStack{
@@ -60,13 +61,15 @@ struct InfoPage: View {
                                 Spacer()
                             }
                         }.padding(.horizontal)
-                        .gupterFont(size: 24)
+                        .padding(.bottom,4)
+                        .gupterFont(size: 30)
+                        
 
                         ForEach(faqs) { faq in
                             VStack(spacing: 8) {
                                 DisclosureGroup {
                                     Text(faq.answer)
-                                        .SFProFont(weight: .regularMidGreen, size:16)
+                                        .SFProFont(weight: .regularMidGreen, size:19)
                                         .padding(.horizontal, 12)
                                         .padding(.vertical, 6)
                                 } label: {
@@ -77,12 +80,12 @@ struct InfoPage: View {
                                             .multilineTextAlignment(.leading)
                                     }
                                 }
-                                .SFProFont(weight: .medium, size:18)
+                                .SFProFont(weight: .medium, size:19)
                                 .padding(.horizontal, 32)
                                 .padding(.vertical, 12)
                                 .background(
                                     RoundedRectangle(cornerRadius: 20)
-                                        .fill(Color.white)
+                                        .fill(Color.almostWhite)
                                         .padding(.horizontal)
                                         .shadow(color:.gray.opacity(0.2), radius:4, x:0, y:2))
                             }

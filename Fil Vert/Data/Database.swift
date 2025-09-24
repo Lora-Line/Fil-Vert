@@ -16,233 +16,477 @@ var users: [Profil] = [
 var sexes: [Sexes] = [.femme, .homme, .nonBinaire]
 
 let clothes: [Clothe] = [
-    Clothe(name: "T-shirt recyclé", brand: BrandName.hopaal, price: 39.90, image: "tshirt_hopaal", description: "T-shirt en coton biologique recyclé, conçu pour durer et fabriqué en France par Hopaal.", material: "100% coton bio recyclé", tags: [Tag.bio, Tag.eco, Tag.madeInFrance], type: TypeClothe.haut, style: StylesClothe.decontracte, morphologyFit: [.h, .x, .v], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Pocket T-shirt", brand: BrandName.hopaal, price: 42.00, image: "pocket_t_shirt_hopaal", description: "T-shirt 100% recyclé avec poche poitrine, tricoté et fabriqué en France.", material: "Coton recyclé", tags: [Tag.eco, Tag.upcycler, Tag.local], type: TypeClothe.haut, style: StylesClothe.minimaliste, morphologyFit: [.a, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Pull Mérinos", brand: BrandName.hopaal, price: 120.00, image: "pull_merinos_opaal", description: "Pull en laine mérinos, isolant et respirant, fabriqué de manière éco-responsable.", material: "Laine mérinos", tags: [Tag.eco, Tag.qualite, Tag.upcycler], type: TypeClothe.haut, style: StylesClothe.minimaliste, morphologyFit: [.o, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Doudoune légère", brand: BrandName.hopaal, price: 190.00, image: "doudoune_legere_hopaal", description: "Doudoune légère en polyester recyclé, conçue pour l’outdoor urbain.", material: "Polyester recyclé", tags: [Tag.eco, Tag.transparence], type: TypeClothe.veste, style: StylesClothe.sportwears, morphologyFit: [.v, .h, .x], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Parka imperméable", brand: BrandName.hopaal, price: 180.00, image: "parka_impermeable_hopaal", description: "Parka imperméable et légère, fabriquée à partir de matériaux recyclés.", material: "Polyester recyclé", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.veste, style: StylesClothe.sportwears, morphologyFit: [.x, .h, .v], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Short cycliste", brand: BrandName.hopaal, price: 50.00, image: "hopaal_cycling_short", description: "Short style cycliste en textile recyclé, confortable pour l’été.", material: "Coton recyclé", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.bas, style: StylesClothe.streetwear, morphologyFit: [.h, .v, .x], womenOrMensWear: .homme),
-    
-    Clothe(name: "Chaussettes", brand: BrandName.hopaal, price: 12.00, image: "chaussettes_hopaal", description: "Paire de chaussettes en coton recyclé, confortables et résistantes pour un usage quotidien.", material: "Coton recyclé", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.accessoire, style: StylesClothe.decontracte, morphologyFit: [.a, .h, .o, .v, .x], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Jean Droit 101", brand: BrandName.milleQuatreVingTrois, price: 139.00, image: "jean_1083_droit_101", description: "Jean droit en coton bio, tissé, teint et confectionné en France (Origine France Garantie).", material: "100% coton bio", tags: [Tag.eco, Tag.madeInFrance, Tag.qualite], type: TypeClothe.bas, style: StylesClothe.minimaliste, morphologyFit: [.h, .x, .a], womenOrMensWear: .homme),
-    
-    Clothe(name: "Jean SuperDenim 115N", brand: BrandName.milleQuatreVingTrois, price: 159.00, image: "jean_super_denim_115n_1083", description: "Jean large SuperDenim en coton bio, coupe ample, confection locale.", material: "100% coton bio", tags: [Tag.eco, Tag.madeInFrance], type: TypeClothe.bas, style: StylesClothe.decontracte, morphologyFit: [.v, .h, .x], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Bermuda Ajusté 173N", brand: BrandName.milleQuatreVingTrois, price: 99.00, image: "bermuda_ajuste_173n_1083", description: "Bermuda jean ajusté en coton bio SuperDenim Flex, idéal pour l'été.", material: "Coton bio + élasthanne", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.bas, style: StylesClothe.preppy, morphologyFit: [.a, .h, .x], womenOrMensWear: .homme),
-    
-    Clothe(name: "Chino 263", brand: BrandName.milleQuatreVingTrois, price: 129.00, image: "chino_263_1083", description: "Chino ajusté terracotta en coton bio, confection 100% made in France.", material: "Coton bio", tags: [Tag.eco, Tag.madeInFrance], type: TypeClothe.bas, style: StylesClothe.preppy, morphologyFit: [.x, .h, .v], womenOrMensWear: .homme),
-    
-    Clothe(name: "Ceinture en cuir", brand: BrandName.milleQuatreVingTrois, price: 55.00, image: "ceinture_en_cuir_1083", description: "Ceinture en cuir fabriquée en France avec boucle minimaliste.", material: "Cuir", tags: [Tag.justePrix, Tag.qualite], type: TypeClothe.accessoire, style: StylesClothe.minimaliste, morphologyFit: [.a, .h, .o, .v, .x], womenOrMensWear: .homme),
-    
-    Clothe(name: "Robe portefeuille", brand: BrandName.sezane, price: 120.00, image: "robe_portefeuille_sezane", description: "Robe fluide portefeuille Sézane, élégante et confortable pour la saison estivale.", material: "Viscose éco-responsable", tags: [Tag.eco, Tag.qualite], type: TypeClothe.robe, style: StylesClothe.elegant, morphologyFit: [.x, .h, .a], womenOrMensWear: .femme),
-    
-    Clothe(name: "Robe Geneviève", brand: BrandName.sezane, price: 285.00, image: "robe_genevieve_sezane", description: "Robe élégante Sézane, coupe fluide avec détails brodés, série Occasion.", material: "Coton / viscose", tags: [Tag.qualite], type: TypeClothe.robe, style: StylesClothe.elegant, morphologyFit: [.a, .x, .h], womenOrMensWear: .homme),
-    
-    Clothe(name: "Trench Clyde", brand: BrandName.sezane, price: 595.00, image: "sezane_clyde_trench", description: "Trench coat chic en coton bio, pièce intemporelle Sézane.", material: "Coton biologique", tags: [Tag.eco, Tag.qualite], type: TypeClothe.veste, style: StylesClothe.sophistique, morphologyFit: [.h, .x, .v], womenOrMensWear: .femme),
-    
-    Clothe(name: "Ballerines classiques", brand: BrandName.sezane, price: 130.00, image: "sezane_ballerines", description: "Ballerines élégantes d’inspiration rétro, parfaites pour un look féminin.", material: "Cuir ou cuir vegan", tags: [Tag.qualite], type: TypeClothe.chaussures, style: StylesClothe.preppy, morphologyFit: [.x, .h, .a], womenOrMensWear: .femme),
-    
-    Clothe(name: "Foulard soie", brand: BrandName.sezane, price: 60.00, image: "foulard_soie_sezane", description: "Foulard léger en soie imprimée, accessoire chic et polyvalent.", material: "Soie", tags: [Tag.justePrix], type: TypeClothe.accessoire, style: StylesClothe.elegant, morphologyFit: [.a, .h, .o, .v, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Robe Scarlett", brand: BrandName.sezane, price: 225.00, image: "Robe_Scarlett_Sezane", description: "Robe Sézane couleur camel, coupe sobre et féminine.", material: "Viscose", tags: [Tag.qualite], type: TypeClothe.robe, style: StylesClothe.elegant, morphologyFit: [.x, .h, .v], womenOrMensWear: .femme),
-    
-    Clothe(name: "Jupe Tania", brand: BrandName.sezane, price: 135.00, image : "jupe_tania_sezane", description: "Jupe mi-longue de la collection New In, imprimé raffiné.", material: "Coton / viscose", tags: [Tag.bio], type: TypeClothe.bas, style: StylesClothe.boheme, morphologyFit: [.a, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Combinaison Estelle", brand: BrandName.sezane, price: 240.00, image: "combinaison_estelle_sezane", description: "Jumpsuit élégante et fluide de la collection Occasion.", material: "Viscose", tags: [Tag.local], type: TypeClothe.haut, style: StylesClothe.elegant, morphologyFit: [.o, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "T-shirt Blouse", brand: BrandName.ekyog, price: 45.00, image: "ekyog_tshirt", description: "T-shirt en coton bio, sobre et durable, pièce phare de Ekyog.", material: "Coton bio", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.haut, style: StylesClothe.minimaliste, morphologyFit: [.h, .x, .a], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Cardigan long", brand: BrandName.ekyog, price: 110.00, image: "cardigan_long_ekyog", description: "Cardigan en maille légère, style épuré et durable.", material: "Coton bio / lin", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.veste, style: StylesClothe.minimaliste, morphologyFit: [.o, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Robe portefeuille", brand: BrandName.ekyog, price: 125.00, image: "Robe_portefeuille_Ekyog", description: "Robe portefeuille fluide en viscose certifiée, coupe flatteuse.", material: "Viscose écologique", tags: [Tag.eco, Tag.qualite], type: TypeClothe.robe, style: StylesClothe.elegant, morphologyFit: [.x, .h, .a], womenOrMensWear: .femme),
-    
-    Clothe(name: "Top crop lin", brand: BrandName.ekyog, price: 55.00, image: "top_crop_lin_ekyog", description: "Top court en lin léger, parfait pour les beaux jours.", material: "Lin", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.haut, style: StylesClothe.decontracte, morphologyFit: [.a, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Gilet lin", brand: BrandName.ekyog, price: 70.00, image: "gilet_lin_ekyog", description: "Gilet en lin sans manches, idéal pour superposer les tenues.", material: "Lin", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.veste, style: StylesClothe.minimaliste, morphologyFit: [.h, .x, .v], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Robe trapèze", brand: BrandName.ekyog, price: 130.00, image: "robe_trapeze_ekyog", description: "Robe trapèze fluide à motifs discrets, style casual-chic.", material: "Viscose certifiée", tags: [Tag.eco, Tag.qualite], type: TypeClothe.robe, style: StylesClothe.decontracte, morphologyFit: [.a, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Chapeau paille", brand: BrandName.makeMyLimonade, price: 45.00, image: "chapeau_paille_limonade", description: "Chapeau en paille naturelle, esprit estival French touch.", material: "Paille naturelle", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.accessoire, style: StylesClothe.boheme, morphologyFit: [.a, .h, .o, .v, .x], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Robe chemise", brand: BrandName.makeMyLimonade, price: 100.00, image: "robe_chemise_limonade", description: "Robe chemise casual chic en coton biologique, facile à porter au quotidien.", material: "Coton biologique", tags: [Tag.eco, Tag.bio], type: TypeClothe.robe, style: StylesClothe.preppy, morphologyFit: [.h, .x, .a], womenOrMensWear: .femme),
-    
-    Clothe(name: "Short cycliste", brand: BrandName.makeMyLimonade, price: 55.00, image: "limonade_cycling_short", description: "Short style cycliste en coton stretch bio, confortable et tendance.", material: "Coton stretch bio", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.bas, style: StylesClothe.streetwear, morphologyFit: [.v, .h, .x], womenOrMensWear: .homme),
-    
-    Clothe(name: "Pull vintage", brand: BrandName.postdiem, price: 105.00, image: "pull_vintage_post_diem", description: "Pull à motif graphique esprit vintage en laine mélangée.", material: "Laine / coton bio", tags: [Tag.eco, Tag.qualite], type: TypeClothe.haut, style: StylesClothe.rock, morphologyFit: [.o, .h, .v], womenOrMensWear: .homme),
-    
-    Clothe(name: "Hoodie", brand: BrandName.postdiem, price: 90.00, image: "hoodie_post_diem", description: "Sweat à capuche doux et confortable en coton recyclé, style casual.", material: "Coton recyclé", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.haut, style: StylesClothe.streetwear, morphologyFit: [.h, .x, .v], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Bermuda urbain", brand: BrandName.postdiem, price: 70.00, image: "bermuda_urbain_post_diem", description: "Bermuda ample en coton recyclé / bio, parfait pour un look décontracté.", material: "Coton bio / recyclé", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.bas, style: StylesClothe.decontracte, morphologyFit: [.v, .h, .x], womenOrMensWear: .homme),
-    
-    Clothe(name: "Jean flare", brand: BrandName.petiteAndSoWhat, price: 110.00, image: "jean_flare_petite_&_so_what", description: "Jean flare adapté aux petites tailles, coupe allongeante en coton bio.", material: "Coton bio", tags: [Tag.petiteTaille, Tag.eco], type: TypeClothe.bas, style: StylesClothe.preppy, morphologyFit: [.a, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Robe midi petite Taille", brand: BrandName.petiteAndSoWhat, price: 115.00, image: "robe_midi_petite_&_So_what", description: "Robe midi pensée pour les morphologies petites, fluide et féminine.", material: "Viscose éco-responsable", tags: [Tag.petiteTaille, Tag.eco], type: TypeClothe.robe, style: StylesClothe.boheme, morphologyFit: [.h, .x, .a], womenOrMensWear: .femme),
-    
-    Clothe(name: "Blazer oversize Petite", brand: BrandName.petiteAndSoWhat, price: 130.00, image: "blazer_oversize_petite_&_so_what", description: "Blazer oversize adapté aux petites tailles, coupe moderne et stylée.", material: "Coton mélangé bio", tags: [Tag.petiteTaille, Tag.eco], type: TypeClothe.veste, style: StylesClothe.preppy, morphologyFit: [.h, .x, .v], womenOrMensWear: .femme),
-    
-    Clothe(name: "Robe vintage", brand: BrandName.lesRecuperables, price: 80.00, image: "lesrecup_vintage_robe", description: "Robe chinée et retravaillée, pièce unique revalorisée.", material: "Coton upcyclé", tags: [Tag.friperie, Tag.upcycler], type: TypeClothe.robe, style: StylesClothe.rock, morphologyFit: [.a, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Gilet laine upcyclée", brand: BrandName.lesRecuperables, price: 95.00, image: "gilet_laine_upcyclee_les_récupérables", description: "Gilet revalorisé à partir de lainages récupérés, style bohème.", material: "Laine récupérée", tags: [Tag.upcycler, Tag.eco], type: TypeClothe.veste, style: StylesClothe.boheme, morphologyFit: [.h, .x, .a], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Béret laine recyclée", brand: BrandName.lesRecuperables, price: 45.00, image: "beret_laine_recyclee_les_recuperables", description: "Béret revisité en laine recyclée, un accessoire emblématique français.", material: "Laine recyclée", tags: [Tag.upcycler, Tag.local], type: TypeClothe.accessoire, style: StylesClothe.preppy, morphologyFit: [.a, .h, .o, .v, .x], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Mini sac bandoulière", brand: BrandName.downOnTheCorner, price: 80.00, image: "downtown_minibag", description: "Petit sac en cuir recyclé, design minimaliste pour un usage urbain.", material: "Cuir recyclé", tags: [Tag.upcycler, Tag.justePrix], type: TypeClothe.accessoire, style: StylesClothe.minimaliste, morphologyFit: [.a, .h, .o, .v, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Bottines montantes urbaines", brand: BrandName.downOnTheCorner, price: 150.00, image: "downtown_boots", description: "Bottines en cuir recyclé, esprit rock urbain, durables et stylées.", material: "Cuir recyclé", tags: [Tag.upcycler, Tag.qualite], type: TypeClothe.chaussures, style: StylesClothe.rock, morphologyFit: [.v, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Sneakers Campo", brand: BrandName.veja, price: 110.00, image: "veja_campo2", description: "Baskets Veja Campo en matériaux recyclés et cuir ChromeFree.", material: "Polyester recyclé, cuir ChromeFree", tags: [Tag.eco, Tag.transparence], type: TypeClothe.chaussures, style: StylesClothe.streetwear, morphologyFit: [.h, .x, .v], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Sneakers Rio Branco", brand: BrandName.veja, price: 145.00, image: "veja_riobranco", description: "Sneakers colorées Veja, durables et stylées pour un usage quotidien.", material: "Coton bio / polyester recyclé", tags: [Tag.eco, Tag.qualite], type: TypeClothe.chaussures, style: StylesClothe.streetwear, morphologyFit: [.h, .x, .v], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Sandales Pampa", brand: BrandName.veja, price: 150.00, image: "veja_pampa", description: "Sandales durables idéales pour l’été, fabriquées de façon éthique.", material: "Cuir vegan", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.chaussures, style: StylesClothe.boheme, morphologyFit: [.x, .h, .a], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Pull oversize Pastel", brand: BrandName.postdiem, price: 115.00, image: "pull_oversize_pastel_post_diem", description: "Pull oversize en laine mélangée, maille douce et esprit casual.", material: "Laine mélangée", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.haut, style: StylesClothe.streetwear, morphologyFit: [.o, .h, .x], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Jean skinny noir Petite", brand: BrandName.petiteAndSoWhat, price: 100.00, image: "jean_skinny_noir_petite_&_so_what", description: "Jean skinny noir pour petites tailles, coupe ajustée et allongeante.", material: "Coton bio", tags: [Tag.petiteTaille, Tag.eco], type: TypeClothe.bas, style: StylesClothe.rock, morphologyFit: [.h, .x, .a], womenOrMensWear: .femme),
-    
-    Clothe(name: "Robe mini Bohème", brand: BrandName.lesPetitesAmbitieuses, price: 90.00, image: "robe_mini_boheme_les_petites_ambitieuses", description: "Robe mini fluide aux imprimés bohèmes, pensée pour les petites tailles.", material: "Viscose éco", tags: [Tag.petiteTaille, Tag.eco], type: TypeClothe.robe, style: StylesClothe.boheme, morphologyFit: [.h, .x, .a], womenOrMensWear: .femme),
-    
-    Clothe(name: "Blouse fleurie", brand: BrandName.lesSublimes, price: 85.00, image: "blouse_fleurie_les_sublimes", description: "Blouse fluide à motifs floraux, élégante et légère.", material: "Viscose éco", tags: [Tag.eco, Tag.qualite], type: TypeClothe.haut, style: StylesClothe.boheme, morphologyFit: [.a, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Jupe crayon", brand: BrandName.balzac, price: 80.00, image: "jupe_crayon_balzac", description: "Jupe crayon en coton bio, coupe élégante et droite.", material: "Coton bio", tags: [Tag.bio, Tag.justePrix], type: TypeClothe.bas, style: StylesClothe.elegant, morphologyFit: [.v, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Chemise imprimée", brand: BrandName.balzac, price: 90.00, image: "chemise_imprimee_balzac", description: "Chemise fluide à imprimés discrets pour un look casual-chic.", material: "Viscose", tags: [Tag.eco, Tag.qualite], type: TypeClothe.haut, style: StylesClothe.preppy, morphologyFit: [.h, .x, .a], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Short denim", brand: BrandName.balzac, price: 65.00, image: "balzac_short_denim", description: "Short en denim éco, coupe droite et pratique pour le quotidien.", material: "Denim éco", tags: [Tag.eco, Tag.justePrix], type: TypeClothe.bas, style: StylesClothe.preppy, morphologyFit: [.v, .h, .x], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Sweat-shirt Hauteville", brand: BrandName.balzac, price: 95.00, image: "sweat_hauteville_balzac", description: "Sweat gris clair chiné, coupe droite, basique et intemporel.", material: "Coton bio", tags: [Tag.eco, Tag.qualite, Tag.local], type: TypeClothe.haut, style: StylesClothe.decontracte, morphologyFit: [.h, .x, .v], womenOrMensWear: .homme),
-
-    Clothe(name: "Chemise Paradis", brand: BrandName.balzac, price: 110.00, image: "chemise_paradis_balzac", description: "Chemise en coton bio avec coupe ajustée, idéale pour un look casual chic.", material: "100% coton bio", tags: [Tag.eco, Tag.qualite], type: TypeClothe.haut, style: StylesClothe.minimaliste, morphologyFit: [.x, .h, .v], womenOrMensWear: .homme),
-    Clothe(name: "Sweat recyclé", brand: BrandName.hopaal, price: 85.00, image: "sweat_recycle_hopaal", description: "Sweat en coton recyclé, doux et durable, fabriqué en France.", material: "Coton recyclé", tags: [Tag.eco, Tag.upcycler, Tag.madeInFrance], type: TypeClothe.haut, style: StylesClothe.streetwear, morphologyFit: [.h, .x, .v], womenOrMensWear: .unisex),
-
-    Clothe(name: "Veste outdoor recyclée", brand: BrandName.hopaal, price: 190.00, image: "veste_outdoor_hopaal", description: "Veste légère imperméable fabriquée à partir de polyester recyclé, idéale pour la mi-saison.", material: "Polyester recyclé", tags: [Tag.eco, Tag.transparence], type: TypeClothe.veste, style: StylesClothe.sportwears, morphologyFit: [.v, .h, .x], womenOrMensWear: .homme),
-    
-    Clothe(name: "Sneakers Campo", brand: BrandName.veja, price: 140.00, image: "veja_campo", description: "Sneakers blanches minimalistes avec détails noirs, fabriquées en cuir écologique.", material: "Cuir écoresponsable et caoutchouc sauvage", tags: [Tag.eco, Tag.qualite, Tag.eco, Tag.madeInFrance], type: TypeClothe.chaussures, style: StylesClothe.minimaliste, morphologyFit: [.a, .h, .x], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Pull col rond mérinos", brand: BrandName.hopaal, price: 130.00, image: "pull_merinos_hopaal", description: "Pull en laine mérinos respirant et chaud, fabriqué en Europe de manière responsable.", material: "Laine mérinos", tags: [Tag.eco, Tag.qualite], type: TypeClothe.haut, style: StylesClothe.minimaliste, morphologyFit: [.h, .x, .v], womenOrMensWear: .homme),
-    
-    Clothe(name: "Chemise lin casual", brand: BrandName.sezane, price: 95.00, image: "chemise_lin_sezane", description: "Chemise en lin léger, coupe droite, style casual et confortable.", material: "100% lin", tags: [Tag.eco, Tag.bio], type: TypeClothe.haut, style: StylesClothe.decontracte, morphologyFit: [.h, .x, .a], womenOrMensWear: .unisex),
-    
-    Clothe(name: "Jean Bootcut 202N Evasé", brand: BrandName.milleQuatreVingTrois, price: 129.00, image: "jean_bootcut_202N_evase_1083", description: "Ses jambes évasées en font le jeans parfait pour allonger votre silhouette quelle que soit votre morphologie.", material: "99% coton bio", tags: [Tag.eco, Tag.qualite], type: TypeClothe.bas, style: StylesClothe.decontracte, morphologyFit: [.v, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Jupe Trapèze 292H Poches Plaquées", brand: BrandName.milleQuatreVingTrois, price: 79.00, image: "jupe_trapeze_292H_poches_plaquees_1083", description: "Avec sa coupe légèrement évasée et son tissu souple, cette jupe sublime votre silhouette tout en étant ultra agréable et facile à porter.", material: "100% coton bio", tags: [Tag.eco, Tag.qualite], type: TypeClothe.bas, style: StylesClothe.decontracte, morphologyFit: [.v, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Jeans Marco Léopard", brand: BrandName.makeMyLimonade, price: 120.00, image: "jeans_marco_leopard_mml", description: "Imprimé léopard réinventé, coupe droite, jambe large.", material: "100% coton", tags: [Tag.eco, Tag.qualite], type: TypeClothe.bas, style: StylesClothe.rock, morphologyFit: [.v, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Chemise en lin Octobre", brand: BrandName.sezane, price: 95.00, image: "chemise_lin_sezane", description: "Chemise légère en lin naturel, coupe droite, idéale pour un look estival masculin.", material: "100% lin", tags: [Tag.eco, Tag.bio], type: TypeClothe.haut, style: StylesClothe.decontracte, morphologyFit: [.h, .x, .v], womenOrMensWear: .homme),
-
-    Clothe(name: "Pantalon chino Octobre", brand: BrandName.sezane, price: 110.00, image: "pantalon_chino_sezane", description: "Chino en coton bio, coupe droite, élégant et confortable pour homme.", material: "100% coton bio", tags: [Tag.eco, Tag.qualite], type: TypeClothe.bas, style: StylesClothe.elegant, morphologyFit: [.v, .h, .x], womenOrMensWear: .homme),
-
-    Clothe(name: "T-shirt col rond Octobre", brand: BrandName.sezane, price: 55.00, image: "tshirt_col_rond_sezane", description: "T-shirt en coton biologique, coupe droite et confortable pour homme.", material: "100% coton bio", tags: [Tag.eco, Tag.qualite], type: TypeClothe.haut, style: StylesClothe.decontracte, morphologyFit: [.h, .x, .a], womenOrMensWear: .homme),
-    
-    Clothe(name: "Top Venus Red Stripes", brand: BrandName.makeMyLimonade, price: 110.00, image: "top_venus_red_stripes_mml", description: "Rayures signatures, manches bouffantes", material: "100% viscose", tags: [Tag.eco, Tag.qualite], type: TypeClothe.haut, style: StylesClothe.boheme, morphologyFit: [.v, .h, .x], womenOrMensWear: .femme),
-    
-    Clothe(name: "Tee-shirt Martel marine", brand: BrandName.balzac, price: 50.00, image: "tee-shirt_martel_marine", description: "Tee-shirt en coton bio, coupe droite, idéal pour un look décontracté.", material: "100% coton bio", tags: [Tag.eco, Tag.qualite], type: TypeClothe.haut, style: StylesClothe.decontracte, morphologyFit: [.h, .x, .v], womenOrMensWear: .homme),
-
-    Clothe(name: "Sweat-shirt Hauteville gris chiné", brand: BrandName.balzac, price: 95.00, image: "sweat-shirt_hauteville_gris_chine", description: "Sweat-shirt en coton bio, coupe droite, confortable pour les journées fraîches.", material: "100% coton bio", tags: [Tag.eco, Tag.qualite], type: TypeClothe.haut, style: StylesClothe.decontracte, morphologyFit: [.h, .x, .v], womenOrMensWear: .homme),
-    
     Clothe(
-        name: "T-shirt 'ON THE BUS'",
-        brand: BrandName.downOnTheCorner,
-        price: 55.00,
-        image: "tshirt_on_the_bus",
-        description: "T-shirt en coton bio avec imprimé 'ON THE BUS', coupe droite unisexe.",
-        material: "100% coton bio",
-        tags: [Tag.eco, Tag.friperie],
+        name: "Top crop en lin",
+        brand: BrandName.ekyog,
+        price: 70.0,
+        image: "top_crop_lin_ekyog",
+        description: "Top court en lin bio, respirant et parfait pour l'été.",
+        material: "100% lin bio",
+        tags: [Tag.qualite],
         type: TypeClothe.haut,
-        style: StylesClothe.rock,
-        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.v], // 3 morphologies
-        womenOrMensWear: .unisex
-    ),
-
-    Clothe(
-        name: "T-shirt 'GOOD LIFE'",
-        brand: BrandName.downOnTheCorner,
-        price: 50.00,
-        image: "tshirt_good_life",
-        description: "T-shirt en coton bio avec imprimé 'GOOD LIFE', coupe droite unisexe.",
-        material: "100% coton bio",
-        tags: [Tag.eco, Tag.friperie],
-        type: TypeClothe.haut,
-        style: StylesClothe.rock,
-        morphologyFit: [MorphologyName.h, MorphologyName.x, MorphologyName.a], // 3 morphologies
-        womenOrMensWear: .unisex
-    ),
-
-    Clothe(
-        name: "Short Driss",
-        brand: BrandName.atelierGConstantini,
-        price: 85.00,
-        image: "short_driss",
-        description: "Short en coton upcyclé, coupe droite, taille élastiquée. Fabriqué en France.",
-        material: "100% coton upcyclé",
-        tags: [Tag.eco, Tag.upcycler],
-        type: TypeClothe.bas,
-        style: StylesClothe.decontracte,
-        morphologyFit: [MorphologyName.h, MorphologyName.v, MorphologyName.o], // 3 morphologies
-        womenOrMensWear: .homme
-    ),
-
-    Clothe(
-        name: "Pantalon Antonina",
-        brand: BrandName.atelierGConstantini,
-        price: 135.00,
-        image: "pantalon_antonina",
-        description: "Pantalon en coton upcyclé, coupe droite, taille haute. Fabriqué en France.",
-        material: "100% coton upcyclé",
-        tags: [Tag.eco, Tag.upcycler],
-        type: TypeClothe.bas,
-        style: StylesClothe.elegant,
-        morphologyFit: [MorphologyName.v, MorphologyName.x, MorphologyName.a], // 3 morphologies
-        womenOrMensWear: .homme
-    ),
-    
-    Clothe(
-        name: "Tee Shirt Femme Col V Fluide",
-        brand: BrandName.doYouGreen,
-        price: 29.00,
-        image: "tee_shirt_femme_col_v_fluide_dyg",
-        description: "Confectionné en microfibre de pin de qualité française DYG, une matière naturellement respirante qui permet à votre peau de s'aérer et de transpirer naturellement",
-        material:"Microfibre de pin",
-        tags: [Tag.eco, Tag.qualite],
-        type: TypeClothe.haut,
-        style: StylesClothe.minimaliste,
-        morphologyFit: [MorphologyName.v, MorphologyName.h, MorphologyName.o],
+        style: [StylesClothe.decontracte, StylesClothe.elegant],
+        morphologyFit: [MorphologyName.h, MorphologyName.v, MorphologyName.x],
         womenOrMensWear: .femme
     ),
 
     Clothe(
-        name: "Sneakers V-10",
-        brand: BrandName.veja,
-        price: 150.00,
-        image: "veja_v10",
-        description: "Sneakers blanches avec détails colorés, fabriquées en cuir écologique et caoutchouc sauvage.",
-        material: "Cuir écologique, caoutchouc sauvage",
-        tags: [Tag.eco, Tag.qualite, Tag.transparence],
-        type: TypeClothe.chaussures,
-        style: StylesClothe.streetwear,
-        morphologyFit: [MorphologyName.h, MorphologyName.a, MorphologyName.o, MorphologyName.x, MorphologyName.v],
+        name: "T-shirt col rond",
+        brand: BrandName.sezane,
+        price: 55.0,
+        image: "tshirt_col_rond_sezane",
+        description: "T-shirt basique col rond en coton bio, indispensable et polyvalent.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.minimaliste, StylesClothe.decontracte],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.a, MorphologyName.v, MorphologyName.x],
         womenOrMensWear: .unisex
     ),
 
     Clothe(
-        name: "Sneakers Venturi",
+        name: "T-shirt basique",
+        brand: BrandName.hopaal,
+        price: 45.0,
+        image: "tshirt_hopaal",
+        description: "T-shirt éco-conçu en coton recyclé, doux et durable.",
+        material: "Coton recyclé",
+        tags: [Tag.upcycler],
+        type: TypeClothe.haut,
+        style: [StylesClothe.minimaliste, StylesClothe.streetwear],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.a, MorphologyName.v, MorphologyName.x],
+        womenOrMensWear: .unisex
+    ),
+
+    Clothe(
+        name: "Veja Campo",
         brand: BrandName.veja,
-        price: 160.00,
-        image: "veja_venturi",
-        description: "Sneakers sportives en cuir et polyester recyclé, design dynamique et confortable.",
-        material: "Cuir et polyester recyclé",
-        tags: [Tag.eco, Tag.qualite],
+        price: 150.0,
+        image: "veja_campo2",
+        description: "Sneakers Veja Campo en cuir écologique, style minimaliste et elegant.",
+        material: "Cuir écologique et caoutchouc naturel",
+        tags: [Tag.qualite],
         type: TypeClothe.chaussures,
-        style: StylesClothe.sportwears,
-        morphologyFit: [MorphologyName.h, MorphologyName.a, MorphologyName.o, MorphologyName.x, MorphologyName.v],
+        style: [StylesClothe.minimaliste, StylesClothe.decontracte],
+        morphologyFit: [MorphologyName.a, MorphologyName.v, MorphologyName.x, MorphologyName.h, MorphologyName.o],
+        womenOrMensWear: .unisex
+    ),
+
+    Clothe(
+        name: "Veja Pampa",
+        brand: BrandName.veja,
+        price: 160.0,
+        image: "veja_pampa",
+        description: "Sneakers montantes Veja Pampa en toile biologique, confortables et stylées.",
+        material: "Toile bio et caoutchouc naturel",
+        tags: [Tag.qualite],
+        type: TypeClothe.chaussures,
+        style: [StylesClothe.streetwear, StylesClothe.decontracte],
+        morphologyFit: [MorphologyName.a, MorphologyName.v, MorphologyName.x, MorphologyName.h, MorphologyName.o],
+        womenOrMensWear: .unisex
+    ),
+
+    Clothe(
+        name: "Veja Riobranco",
+        brand: BrandName.veja,
+        price: 155.0,
+        image: "veja_riobranco",
+        description: "Sneakers Veja Riobranco en suède et tissu recyclé, look rétro.",
+        material: "Suède écologique et polyester recyclé",
+        tags: [Tag.upcycler],
+        type: TypeClothe.chaussures,
+        style: [StylesClothe.decontracte, StylesClothe.streetwear],
+        morphologyFit: [MorphologyName.a, MorphologyName.v, MorphologyName.x, MorphologyName.h, MorphologyName.o],
+        womenOrMensWear: .unisex
+    ),
+
+    Clothe(
+        name: "Veja Venturi",
+        brand: BrandName.veja,
+        price: 175.0,
+        image: "veja_venturi",
+        description: "Sneakers Veja Venturi robustes et éco-conçues, idéales pour un style casual.",
+        material: "Cuir vegan et matériaux recyclés",
+        tags: [Tag.upcycler],
+        type: TypeClothe.chaussures,
+        style: [StylesClothe.streetwear, StylesClothe.decontracte],
+        morphologyFit: [MorphologyName.a, MorphologyName.v, MorphologyName.x, MorphologyName.h, MorphologyName.o],
+        womenOrMensWear: .unisex
+    ),
+    Clothe(
+        name: "Pull vintage",
+        brand: BrandName.postdiem,
+        price: 95.0,
+        image: "pull_vintage_post_diem",
+        description: "Pull vintage en coton recyclé, coupe loose et look rétro.",
+        material: "Coton recyclé",
+        tags: [Tag.upcycler],
+        type: TypeClothe.haut,
+        style: [StylesClothe.decontracte],
+        morphologyFit: [MorphologyName.o, MorphologyName.h, MorphologyName.a],
+        womenOrMensWear: .unisex
+    ),
+
+    Clothe(
+        name: "Robe chemise",
+        brand: BrandName.makeMyLimonade,
+        price: 140.0,
+        image: "robe_chemise_limonade",
+        description: "Robe chemise fluide, confortable et élégante, parfaite au quotidien.",
+        material: "Coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.robe,
+        style: [StylesClothe.elegant, StylesClothe.decontracte],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.v],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Robe Geneviève",
+        brand: BrandName.sezane,
+        price: 160.0,
+        image: "robe_genevieve_sezane",
+        description: "Robe élégante mi-longue en coton biologique, style intemporel.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.robe,
+        style: [StylesClothe.elegant, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.x, MorphologyName.a, MorphologyName.v],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Robe midi",
+        brand: BrandName.petiteAndSoWhat,
+        price: 150.0,
+        image: "robe_midi_petite_&_So_what",
+        description: "Robe midi élégante, idéale pour sublimer la silhouette avec féminité.",
+        material: "Coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.robe,
+        style: [StylesClothe.elegant, StylesClothe.decontracte],
+        morphologyFit: [MorphologyName.a, MorphologyName.x, MorphologyName.v],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Robe mini bohème",
+        brand: BrandName.lesPetitesAmbitieuses,
+        price: 120.0,
+        image: "robe_mini_boheme_les_petites_ambitieuses",
+        description: "Robe courte bohème en coton bio avec imprimé floral.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.robe,
+        style: [StylesClothe.boheme, StylesClothe.decontracte],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.a],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Robe portefeuille",
+        brand: BrandName.ekyog,
+        price: 165.0,
+        image: "Robe_portefeuille_Ekyog",
+        description: "Robe portefeuille fluide en viscose écoresponsable, flatteuse pour la silhouette.",
+        material: "Viscose écoresponsable",
+        tags: [Tag.qualite],
+        type: TypeClothe.robe,
+        style: [StylesClothe.elegant, StylesClothe.boheme],
+        morphologyFit: [MorphologyName.a, MorphologyName.o, MorphologyName.x],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Robe portefeuille Sézane",
+        brand: BrandName.sezane,
+        price: 170.0,
+        image: "robe_portefeuille_sezane",
+        description: "Robe portefeuille féminine en coton bio, parfaite pour toutes occasions.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.robe,
+        style: [StylesClothe.elegant, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.a, MorphologyName.o, MorphologyName.x],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Robe Scarlett",
+        brand: BrandName.sezane,
+        price: 180.0,
+        image: "Robe_Scarlett_Sezane",
+        description: "Robe élégante et raffinée, parfaite pour les grandes occasions.",
+        material: "Coton bio et soie",
+        tags: [Tag.qualite],
+        type: TypeClothe.robe,
+        style: [StylesClothe.elegant, StylesClothe.preppy],
+        morphologyFit: [MorphologyName.x, MorphologyName.a, MorphologyName.v],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Robe toutes saisons",
+        brand: BrandName.cotonVert,
+        price: 95.0,
+        image: "robe_toutes_saisons_fr_tbg_cv",
+        description: "Robe pratique et confortable en coton bio, idéale pour toutes les saisons.",
+        material: "100% coton bio",
+        tags: [Tag.bio, Tag.madeInFrance],
+        type: TypeClothe.robe,
+        style: [StylesClothe.decontracte, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.a],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Robe trapèze",
+        brand: BrandName.ekyog,
+        price: 130.0,
+        image: "robe_trapeze_ekyog",
+        description: "Robe trapèze fluide et légère en coton bio.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.robe,
+        style: [StylesClothe.boheme, StylesClothe.elegant],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.a],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Robe vintage",
+        brand: BrandName.lesRecuperables,
+        price: 125.0,
+        image: "robe_vintage_les_recuperables",
+        description: "Robe unique en tissu upcyclé, style vintage et responsable.",
+        material: "Coton recyclé",
+        tags: [Tag.upcycler],
+        type: TypeClothe.robe,
+        style: [StylesClothe.streetwear, StylesClothe.decontracte],
+        morphologyFit: [MorphologyName.o, MorphologyName.h, MorphologyName.a],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Sac Mae",
+        brand: BrandName.balzac,
+        price: 140.0,
+        image: "sac_mae_balzac",
+        description: "Sac en cuir responsable, pratique et intemporel.",
+        material: "Cuir écoresponsable",
+        tags: [Tag.qualite],
+        type: TypeClothe.accessoire,
+        style: [StylesClothe.elegant, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.a, MorphologyName.v, MorphologyName.x, MorphologyName.o, MorphologyName.h],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Ballerines Sézane",
+        brand: BrandName.sezane,
+        price: 135.0,
+        image: "sezane_ballerines",
+        description: "Ballerines élégantes en cuir écoresponsable, parfaites pour un look elegant.",
+        material: "Cuir écoresponsable",
+        tags: [Tag.qualite],
+        type: TypeClothe.chaussures,
+        style: [StylesClothe.elegant, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.a, MorphologyName.v, MorphologyName.x, MorphologyName.o, MorphologyName.h],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Trench Clyde",
+        brand: BrandName.sezane,
+        price: 220.0,
+        image: "sezane_clyde_trench",
+        description: "Trench élégant et intemporel, fabriqué en coton bio.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.veste,
+        style: [StylesClothe.elegant, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.v],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Short cycliste",
+        brand: BrandName.hopaal,
+        price: 60.0,
+        image: "short_cycliste_hopaal",
+        description: "Short cycliste éco-conçu, idéal pour le sport ou un look streetwear.",
+        material: "Polyester recyclé",
+        tags: [Tag.upcycler],
+        type: TypeClothe.bas,
+        style: [StylesClothe.sportwears, StylesClothe.streetwear],
+        morphologyFit: [MorphologyName.h, MorphologyName.v, MorphologyName.o],
+        womenOrMensWear: .unisex
+    ),
+
+    Clothe(
+        name: "Short denim",
+        brand: BrandName.balzac,
+        price: 75.0,
+        image: "Short_denim_Balzac",
+        description: "Short en denim bio, coupe décontractée et estivale.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.bas,
+        style: [StylesClothe.decontracte, StylesClothe.streetwear],
+        morphologyFit: [MorphologyName.h, MorphologyName.v, MorphologyName.a],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Sweat Hauteville",
+        brand: BrandName.balzac,
+        price: 95.0,
+        image: "sweat_hauteville_balzac",
+        description: "Sweat chiné en coton bio, confortable et basique.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.decontracte, StylesClothe.streetwear],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.v],
         womenOrMensWear: .homme
+    ),
+
+    Clothe(
+        name: "T-shirt blouse",
+        brand: BrandName.ekyog,
+        price: 65.0,
+        image: "t_shirt_blouse_ekyog",
+        description: "T-shirt fluide en coton bio, look casual elegant.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.elegant, StylesClothe.decontracte],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.a],
+        womenOrMensWear: .femme
+    ),
+    Clothe(
+        name: "Béret en laine recyclée",
+        brand: BrandName.lesRecuperables,
+        price: 60.0,
+        image: "beret_laine_recyclee_les_recuperables",
+        description: "Un béret intemporel et élégant, fabriqué à partir de laine recyclée pour allier style et écoresponsabilité.",
+        material: "Laine recyclée",
+        tags: [Tag.upcycler, Tag.madeInFrance],
+        type: TypeClothe.accessoire,
+        style: [StylesClothe.elegant, StylesClothe.boheme, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.x],
+        womenOrMensWear: .unisex
+    ),
+    Clothe(
+        name: "Bermuda ajusté 173N",
+        brand: BrandName.milleQuatreVingTrois,
+        price: 85.0,
+        image: "bermuda_ajuste_173n_1083",
+        description: "Bermuda ajusté en coton bio, confortable et parfait pour l'été.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.bas,
+        style: [StylesClothe.decontracte, StylesClothe.elegant, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.h, MorphologyName.v, MorphologyName.a],
+        womenOrMensWear: .homme
+    ),
+
+    Clothe(
+        name: "Bermuda urbain",
+        brand: BrandName.lesRecuperables,
+        price: 95.0,
+        image: "bermuda_urbain_post_diem",
+        description: "Bermuda moderne et urbain en coton biologique, idéal pour un look casual elegant.",
+        material: "100% coton bio",
+        tags: [Tag.local],
+        type: TypeClothe.bas,
+        style: [StylesClothe.streetwear, StylesClothe.decontracte, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.v],
+        womenOrMensWear: .homme
+    ),
+
+    Clothe(
+        name: "Blazer oversize",
+        brand: BrandName.petiteAndSoWhat,
+        price: 160.0,
+        image: "blazer_oversize_petite_&_so_what",
+        description: "Blazer oversize en tissu éco-responsable, parfait pour un look elegant et décontracté.",
+        material: "Mélange de fibres écoresponsables",
+        tags: [Tag.qualite],
+        type: TypeClothe.veste,
+        style: [StylesClothe.elegant, StylesClothe.decontracte, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.x, MorphologyName.h, MorphologyName.o],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Blouse Basile",
+        brand: BrandName.balzac,
+        price: 110.0,
+        image: "blouse_basile_balzac",
+        description: "Blouse fluide et élégante en coton bio, idéale pour un look casual elegant.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.elegant, StylesClothe.minimaliste, StylesClothe.boheme],
+        morphologyFit: [MorphologyName.h, MorphologyName.v, MorphologyName.a],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Blouse fleurie",
+        brand: BrandName.lesSublimes,
+        price: 120.0,
+        image: "blouse_fleurie_les_sublimes",
+        description: "Blouse fleurie en viscose écoresponsable, féminine et agréable à porter.",
+        material: "Viscose écoresponsable",
+        tags: [Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.boheme, StylesClothe.elegant, StylesClothe.decontracte],
+        morphologyFit: [MorphologyName.a, MorphologyName.o, MorphologyName.x],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Blazer oversize",
+        brand: BrandName.petiteAndSoWhat,
+        price: 160.0,
+        image: "blazer_oversize_petite_&_so_what",
+        description: "Blazer oversize en tissu éco-responsable, parfait pour un look elegant et décontracté.",
+        material: "Mélange de fibres écoresponsables",
+        tags: [Tag.qualite],
+        type: TypeClothe.veste,
+        style: [StylesClothe.elegant, StylesClothe.decontracte, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.x, MorphologyName.h, MorphologyName.o],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Blouse Basile",
+        brand: BrandName.balzac,
+        price: 110.0,
+        image: "blouse_basile_balzac",
+        description: "Blouse fluide et élégante en coton bio, idéale pour un look casual elegant.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.elegant, StylesClothe.minimaliste, StylesClothe.boheme],
+        morphologyFit: [MorphologyName.h, MorphologyName.v, MorphologyName.a],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Blouse fleurie",
+        brand: BrandName.lesSublimes,
+        price: 120.0,
+        image: "blouse_fleurie_les_sublimes",
+        description: "Blouse fleurie en viscose écoresponsable, féminine et agréable à porter.",
+        material: "Viscose écoresponsable",
+        tags: [Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.boheme, StylesClothe.elegant, StylesClothe.decontracte],
+        morphologyFit: [MorphologyName.a, MorphologyName.o, MorphologyName.x],
+        womenOrMensWear: .femme
     ),
 
     Clothe(
@@ -250,27 +494,167 @@ let clothes: [Clothe] = [
         brand: BrandName.makeMyLimonade,
         price: 220.00,
         image: "boots_jojo_effet_snake_mml",
-        description: "L'accessoire qui fait tout",
-        material:"100% cuir",
-        tags: [Tag.eco, Tag.qualite],
+        description: "Des boots au style affirmé avec un effet snake, idéales pour dynamiser une tenue.",
+        material: "100% cuir",
+        tags: [Tag.qualite],
         type: TypeClothe.chaussures,
-        style: StylesClothe.rock,
-        morphologyFit: [MorphologyName.h, MorphologyName.a, MorphologyName.o, MorphologyName.x, MorphologyName.v],
+        style: [StylesClothe.rock, StylesClothe.elegant, StylesClothe.streetwear],
+        morphologyFit: [MorphologyName.a, MorphologyName.h, MorphologyName.o, MorphologyName.v, MorphologyName.x], // toutes morphologies
         womenOrMensWear: .femme
     ),
-    
+
     Clothe(
         name: "Bottes Anita Kaki",
         brand: BrandName.makeMyLimonade,
         price: 230.00,
         image: "bottes_anita_kaki_mml",
-        description: "Hauteur sous le genou, talon 8 cm, soufflet élastiqué au mollet pour le confort",
-        material: "Tige : cuir de veau / Doublure & semelle : synthétique",
-        tags: [Tag.eco, Tag.qualite],
+        description: "Bottes hauteur genou avec talon 8 cm, soufflet élastiqué au mollet pour plus de confort.",
+        material: "Cuir de veau, doublure synthétique",
+        tags: [Tag.qualite],
         type: TypeClothe.chaussures,
-        style: StylesClothe.elegant,
-        morphologyFit: [MorphologyName.h, MorphologyName.a, MorphologyName.o, MorphologyName.x, MorphologyName.v],
+        style: [StylesClothe.elegant, StylesClothe.elegant, StylesClothe.boheme],
+        morphologyFit: [MorphologyName.a, MorphologyName.h, MorphologyName.o, MorphologyName.v, MorphologyName.x], // toutes morphologies
         womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Cardigan long",
+        brand: BrandName.ekyog,
+        price: 145.0,
+        image: "cardigan_long_ekyog",
+        description: "Cardigan long en laine recyclée, parfait pour un look cosy et responsable.",
+        material: "Laine recyclée",
+        tags: [Tag.qualite, Tag.upcycler],
+        type: TypeClothe.haut,
+        style: [StylesClothe.decontracte, StylesClothe.boheme, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.x],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Jupe crayon",
+        brand: BrandName.balzac,
+        price: 120.0,
+        image: "jupe_crayon_balzac",
+        description: "Jupe crayon élégante en coton bio, parfaite pour un look elegant et féminin.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.bas,
+        style: [StylesClothe.elegant, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.x, MorphologyName.h, MorphologyName.o],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Pantalon Siméon",
+        brand: BrandName.balzac,
+        price: 135.0,
+        image: "pantalon_simeon_balzac",
+        description: "Pantalon fluide en coton bio, coupe droite moderne et confortable.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.bas,
+        style: [StylesClothe.decontracte, StylesClothe.elegant, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.h, MorphologyName.v, MorphologyName.o],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Parka imperméable",
+        brand: BrandName.hopaal,
+        price: 210.0,
+        image: "parka_impermeable_hopaal",
+        description: "Parka imperméable en polyester recyclé, idéale pour affronter la pluie avec style.",
+        material: "Polyester recyclé",
+        tags: [Tag.upcycler],
+        type: TypeClothe.veste,
+        style: [StylesClothe.sportwears, StylesClothe.streetwear],
+        morphologyFit: [MorphologyName.h, MorphologyName.v, MorphologyName.o],
+        womenOrMensWear: .unisex
+    ),
+
+    Clothe(
+        name: "Polo coton bio",
+        brand: BrandName.cotonVert,
+        price: 49.0,
+        image: "polo_hm_cb",
+        description: "Polo intemporel en coton bio, confortable et solide pour un usage quotidien.",
+        material: "100% coton bio",
+        tags: [Tag.qualite, Tag.bio],
+        type: TypeClothe.haut,
+        style: [StylesClothe.sportwears, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.h, MorphologyName.v, MorphologyName.o],
+        womenOrMensWear: .unisex
+    ),
+
+    Clothe(
+        name: "Pocket T-shirt Hopaal",
+        brand: BrandName.hopaal,
+        price: 45.0,
+        image: "pocket_t_shirt_hopaal",
+        description: "T-shirt en coton bio avec poche poitrine, basique et durable.",
+        material: "100% coton bio",
+        tags: [Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.decontracte, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.h, MorphologyName.v, MorphologyName.a],
+        womenOrMensWear: .unisex
+    ),
+
+    Clothe(
+        name: "Pull mérinos",
+        brand: BrandName.hopaal,
+        price: 130.0,
+        image: "pull_merinos_opaal",
+        description: "Pull en laine mérinos chaud et respirant, fabriqué en Europe.",
+        material: "Laine mérinos",
+        tags: [Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.minimaliste, StylesClothe.elegant],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.x],
+        womenOrMensWear: .homme
+    ),
+
+    Clothe(
+        name: "Pull oversize pastel",
+        brand: BrandName.doYouGreen,
+        price: 110.0,
+        image: "pull_oversize_pastel_post_diem",
+        description: "Pull oversize doux et pastel en coton bio, parfait pour un look cocooning.",
+        material: "100% coton bio",
+        tags: [Tag.local],
+        type: TypeClothe.haut,
+        style: [StylesClothe.decontracte, StylesClothe.boheme],
+        morphologyFit: [MorphologyName.o, MorphologyName.h, MorphologyName.a],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Cardigan long",
+        brand: BrandName.ekyog,
+        price: 145.0,
+        image: "cardigan_long_ekyog",
+        description: "Cardigan long en laine recyclée, parfait pour un look cosy et responsable.",
+        material: "Laine recyclée",
+        tags: [Tag.qualite, Tag.upcycler],
+        type: TypeClothe.haut,
+        style: [StylesClothe.decontracte, StylesClothe.boheme, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.x],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Ceinture en cuir",
+        brand: BrandName.milleQuatreVingTrois,
+        price: 55.0,
+        image: "ceinture_en_cuir_1083",
+        description: "Ceinture en cuir fabriquée en France, solide et élégante pour compléter vos tenues.",
+        material: "100% cuir",
+        tags: [Tag.qualite, Tag.madeInFrance],
+        type: TypeClothe.accessoire,
+        style: [StylesClothe.elegant, StylesClothe.decontracte, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.a, MorphologyName.h, MorphologyName.o, MorphologyName.v, MorphologyName.x], // toutes morphologies
+        womenOrMensWear: .unisex
     ),
 
     Clothe(
@@ -280,9 +664,9 @@ let clothes: [Clothe] = [
         image: "jean_décontracté",
         description: "Pantalon jean sympathique pour la saison automne.",
         material: "Polyester 100%",
-        tags: [Tag.bio, Tag.eco, Tag.madeInFrance],
+        tags: [Tag.bio,  Tag.madeInFrance],
         type: TypeClothe.bas,
-        style: StylesClothe.decontracte,
+        style: [StylesClothe.decontracte, StylesClothe.streetwear, StylesClothe.rock],
         morphologyFit: [MorphologyName.x, MorphologyName.h, MorphologyName.v],
         womenOrMensWear: .femme
     ),
@@ -294,13 +678,13 @@ let clothes: [Clothe] = [
         image: "jupe_confortable",
         description: "Jupe agréable à porter pendant le mois d'automne.",
         material: "Lin",
-        tags: [Tag.bio, Tag.eco, Tag.madeInFrance],
+        tags: [Tag.bio,  Tag.madeInFrance],
         type: TypeClothe.bas,
-        style: StylesClothe.decontracte,
+        style: [StylesClothe.decontracte, StylesClothe.boheme, StylesClothe.elegant],
         morphologyFit: [MorphologyName.v, MorphologyName.a, MorphologyName.h],
         womenOrMensWear: .femme
     ),
-    
+
     Clothe(
         name: "Robe Natacha Polka Daisy",
         brand: BrandName.makeMyLimonade,
@@ -308,9 +692,9 @@ let clothes: [Clothe] = [
         image: "robe_natacha_polka_daisy_mml",
         description: "Imprimé inédit, manches bouffantes et partie jupe froncée",
         material: "Composée à 59% de viscose ecovero et 41% de viscose",
-        tags: [Tag.eco, Tag.qualite, Tag.grandeTaille],
+        tags: [ Tag.qualite, Tag.grandeTaille],
         type: TypeClothe.robe,
-        style: StylesClothe.boheme,
+        style: [StylesClothe.boheme, StylesClothe.decontracte, StylesClothe.elegant],
         morphologyFit: [MorphologyName.o, MorphologyName.a, MorphologyName.h],
         womenOrMensWear: .femme
     ),
@@ -324,7 +708,7 @@ let clothes: [Clothe] = [
         material: "100% lin",
         tags: [Tag.grandeTaille, Tag.justePrix],
         type: TypeClothe.robe,
-        style: StylesClothe.decontracte,
+        style: [StylesClothe.decontracte, StylesClothe.boheme, StylesClothe.elegant],
         morphologyFit: [MorphologyName.o, MorphologyName.v, MorphologyName.h],
         womenOrMensWear: .femme
     ),
@@ -338,99 +722,388 @@ let clothes: [Clothe] = [
         material: "100% coton upcyclé",
         tags: [Tag.grandeTaille, Tag.justePrix],
         type: TypeClothe.haut,
-        style: StylesClothe.decontracte,
+        style: [StylesClothe.decontracte, StylesClothe.streetwear, StylesClothe.minimaliste],
         morphologyFit: [MorphologyName.o, MorphologyName.h, MorphologyName.x],
         womenOrMensWear: .femme
     ),
-    
     Clothe(
-        name: "Blouse Basile",
-        brand: BrandName.balzac,
-        price: 145.00,
-        image: "blouse_basile_balzac",
-        description: "Blouse inspiration vareuse",
-        material: "40% acétate biosourcé Naia™, 32% lin, 18% viscose issue de ressources certifiées et gérées durablement, 10% polyester recyclé et certifié GRS, certifié STEP by OEKO-TEX®",
-        tags: [Tag.qualite, Tag.justePrix],
+        name: "T-Shirt Femme Col V Fluide",
+        brand: BrandName.doYouGreen,
+        price: 29.00,
+        image: "tee_shirt_femme_col_v_fluide_dyg",
+        description: "Confectionné en microfibre de pin de qualité française DYG, une matière naturellement respirante qui permet à votre peau de s'aérer et de transpirer naturellement",
+        material:"Microfibre de pin",
+        tags: [ Tag.qualite],
         type: TypeClothe.haut,
-        style: StylesClothe.elegant,
-        morphologyFit: [MorphologyName.o, MorphologyName.v, MorphologyName.h],
+        style: [StylesClothe.minimaliste, StylesClothe.decontracte, StylesClothe.streetwear],
+        morphologyFit: [MorphologyName.v, MorphologyName.h, MorphologyName.o],
         womenOrMensWear: .femme
     ),
 
     Clothe(
-        name: "Chaussette écolo",
-        brand: BrandName.cotonVert,
-        price: 10.71,
-        image: "chaussettes_écolo",
-        description: "Chaussette confortable et écologique à porter toutes les saisons.",
-        material: "100% polyester",
-        tags: [Tag.bio, Tag.eco, Tag.madeInFrance],
-        type: TypeClothe.accessoire,
-        style: StylesClothe.decontracte,
-        morphologyFit: [MorphologyName.h, MorphologyName.a, MorphologyName.o, MorphologyName.v, MorphologyName.x],
-        womenOrMensWear: .femme
+        name: "Sneakers V-10",
+        brand: BrandName.veja,
+        price: 150.00,
+        image: "veja_v10",
+        description: "Sneakers blanches avec détails colorés, fabriquées en cuir écologique et caoutchouc sauvage.",
+        material: "Cuir écologique, caoutchouc sauvage",
+        tags: [ Tag.qualite],
+        type: TypeClothe.chaussures,
+        style: [StylesClothe.streetwear, StylesClothe.sportwears, StylesClothe.minimaliste, StylesClothe.rock],
+        morphologyFit: [MorphologyName.h, MorphologyName.a, MorphologyName.o, MorphologyName.x, MorphologyName.v],
+        womenOrMensWear: .unisex
     ),
 
     Clothe(
-        name: "Pantalon Simeon",
-        brand: BrandName.balzac,
-        price: 180.00,
-        image: "pantalon_simeon_balzac",
-        description: "Pantalon structuré en velours côtelé qui se porte taille haute",
-        material: "100% coton issu de l'agriculture biologique certifié et traçable, certifié STANDARD 100 by OEKO-TEX®",
-        tags: [Tag.qualite, Tag.bio],
-        type: TypeClothe.bas,
-        style: StylesClothe.elegant,
-        morphologyFit: [MorphologyName.o, MorphologyName.h, MorphologyName.x],
-        womenOrMensWear: .femme
+        name: "Sneakers Venturi",
+        brand: BrandName.veja,
+        price: 160.00,
+        image: "veja_venturi",
+        description: "Sneakers sportives en cuir et polyester recyclé, design dynamique et confortable.",
+        material: "Cuir et polyester recyclé",
+        tags: [ Tag.qualite],
+        type: TypeClothe.chaussures,
+        style: [StylesClothe.sportwears, StylesClothe.streetwear, StylesClothe.minimaliste, StylesClothe.rock],
+        morphologyFit: [MorphologyName.h, MorphologyName.a, MorphologyName.o, MorphologyName.x, MorphologyName.v],
+        womenOrMensWear: .homme
     ),
 
     Clothe(
-        name: "Sac Maé",
-        brand: BrandName.balzac,
-        price: 360.00,
-        image: "sac_mae_balzac",
-        description: "Avec sa forme demi-lune élégante et sa silhouette épurée, Maé affirme une allure à la fois moderne et intemporelle.",
-        material: "100% cuir de vachette certifié LWG Silver et d'origine européenne",
-        tags: [Tag.qualite, Tag.local],
-        type: TypeClothe.accessoire,
-        style: StylesClothe.elegant,
-        morphologyFit: [MorphologyName.h, MorphologyName.a, MorphologyName.o, MorphologyName.v, MorphologyName.x],
-        womenOrMensWear: .femme
-    ),
-    
-    Clothe(
-        name: "Débardeur pour été",
+        name: "T-shirt 'ON THE BUS'",
         brand: BrandName.downOnTheCorner,
-        price: 27.30,
-        image: "debardeur_pour_ete",
-        description: "Un joli débardeur à porter en été.",
-        material: "Coton biologique",
-        tags: [Tag.bio, Tag.eco, Tag.madeInFrance],
+        price: 55.00,
+        image: "tshirt_on_the_bus",
+        description: "T-shirt en coton bio avec imprimé 'ON THE BUS', coupe droite unisexe.",
+        material: "100% coton bio",
+        tags: [ Tag.friperie],
         type: TypeClothe.haut,
-        style: StylesClothe.decontracte,
+        style: [StylesClothe.rock, StylesClothe.streetwear, StylesClothe.decontracte],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.v],
+        womenOrMensWear: .unisex
+    ),
+
+    Clothe(
+        name: "T-shirt 'GOOD LIFE'",
+        brand: BrandName.downOnTheCorner,
+        price: 50.00,
+        image: "tshirt_good_life",
+        description: "T-shirt en coton bio avec imprimé 'GOOD LIFE', coupe droite unisexe.",
+        material: "100% coton bio",
+        tags: [ Tag.friperie],
+        type: TypeClothe.haut,
+        style: [StylesClothe.rock, StylesClothe.decontracte, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.h, MorphologyName.x, MorphologyName.a],
+        womenOrMensWear: .unisex
+    ),
+
+    Clothe(
+        name: "Short Driss",
+        brand: BrandName.atelierGConstantini,
+        price: 85.00,
+        image: "short_driss",
+        description: "Short en coton upcyclé, coupe droite, taille élastiquée. Fabriqué en France.",
+        material: "100% coton upcyclé",
+        tags: [ Tag.upcycler],
+        type: TypeClothe.bas,
+        style: [StylesClothe.decontracte, StylesClothe.streetwear, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.h, MorphologyName.v, MorphologyName.o],
+        womenOrMensWear: .homme
+    ),
+
+    Clothe(
+        name: "Pantalon Antonina",
+        brand: BrandName.atelierGConstantini,
+        price: 135.00,
+        image: "pantalon_antonina",
+        description: "Pantalon en coton upcyclé, coupe droite, taille haute. Fabriqué en France.",
+        material: "100% coton upcyclé",
+        tags: [ Tag.upcycler],
+        type: TypeClothe.bas,
+        style: [StylesClothe.elegant, StylesClothe.elegant, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.v, MorphologyName.x, MorphologyName.a],
+        womenOrMensWear: .homme
+    ),
+
+    Clothe(
+        name: "Top Venus Red Stripes",
+        brand: BrandName.makeMyLimonade,
+        price: 110.00,
+        image: "top_venus_red_stripes_mml",
+        description: "Rayures signatures, manches bouffantes",
+        material: "100% viscose",
+        tags: [ Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.boheme, StylesClothe.decontracte, StylesClothe.minimaliste],
         morphologyFit: [MorphologyName.a, MorphologyName.h, MorphologyName.x],
         womenOrMensWear: .femme
     ),
 
+    Clothe(
+        name: "Tee-shirt Martel marine",
+        brand: BrandName.balzac,
+        price: 50.00,
+        image: "tee-shirt_martel_marine",
+        description: "Tee-shirt en coton bio, coupe droite, idéal pour un look décontracté.",
+        material: "100% coton bio",
+        tags: [ Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.decontracte, StylesClothe.minimaliste, StylesClothe.streetwear],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.v],
+        womenOrMensWear: .homme
+    ),
+
+    Clothe(
+        name: "Sweat-shirt Hauteville gris chiné",
+        brand: BrandName.balzac,
+        price: 95.00,
+        image: "sweat-shirt_hauteville_gris_chine",
+        description: "Sweat-shirt en coton bio, coupe droite, confortable pour les journées fraîches.",
+        material: "100% coton bio",
+        tags: [ Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.decontracte, StylesClothe.streetwear, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.h, MorphologyName.a, MorphologyName.o],
+        womenOrMensWear: .homme
+    ),
+    Clothe(
+        name: "Jupe Trapèze 292H Poches Plaquées",
+        brand: BrandName.milleQuatreVingTrois,
+        price: 79.00,
+        image: "jupe_trapeze_292H_poches_plaquees_1083",
+        description: "Avec sa coupe légèrement évasée et son tissu souple, cette jupe sublime votre silhouette tout en étant ultra agréable et facile à porter.",
+        material: "100% coton bio",
+        tags: [ Tag.qualite],
+        type: TypeClothe.bas,
+        style: [StylesClothe.decontracte, StylesClothe.boheme, StylesClothe.elegant],
+        morphologyFit: [MorphologyName.v, MorphologyName.x, MorphologyName.a],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Jeans Marco Léopard",
+        brand: BrandName.makeMyLimonade,
+        price: 120.00,
+        image: "jeans_marco_leopard_mml",
+        description: "Imprimé léopard réinventé, coupe droite, jambe large.",
+        material: "100% coton",
+        tags: [ Tag.qualite],
+        type: TypeClothe.bas,
+        style: [StylesClothe.rock, StylesClothe.streetwear, StylesClothe.decontracte],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.v],
+        womenOrMensWear: .femme
+    ),
+
+    Clothe(
+        name: "Chemise en lin Octobre",
+        brand: BrandName.sezane,
+        price: 95.00,
+        image: "chemise_lin_sezane2",
+        description: "Chemise légère en lin naturel, coupe droite, idéale pour un look estival masculin.",
+        material: "100% lin",
+        tags: [ Tag.bio],
+        type: TypeClothe.haut,
+        style: [StylesClothe.decontracte, StylesClothe.minimaliste, StylesClothe.elegant],
+        morphologyFit: [MorphologyName.h, MorphologyName.a, MorphologyName.v],
+        womenOrMensWear: .homme
+    ),
+
+    Clothe(
+        name: "Pantalon chino Octobre",
+        brand: BrandName.sezane,
+        price: 110.00,
+        image: "pantalon_chino_sezane",
+        description: "Chino en coton bio, coupe droite, élégant et confortable pour homme.",
+        material: "100% coton bio",
+        tags: [ Tag.qualite],
+        type: TypeClothe.bas,
+        style: [StylesClothe.elegant, StylesClothe.decontracte, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.v, MorphologyName.x, MorphologyName.o],
+        womenOrMensWear: .homme
+    ),
+
+    Clothe(
+        name: "T-shirt col rond Octobre",
+        brand: BrandName.sezane,
+        price: 55.00,
+        image: "tshirt_col_rond_sezane",
+        description: "T-shirt en coton biologique, coupe droite et confortable pour homme.",
+        material: "100% coton bio",
+        tags: [ Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.decontracte, StylesClothe.streetwear, StylesClothe.minimaliste],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.v],
+        womenOrMensWear: .homme
+    ),
+    Clothe(
+        name: "Pull col rond mérinos",
+        brand: BrandName.hopaal,
+        price: 130.00,
+        image: "pull_merinos_hopaal",
+        description: "Pull en laine mérinos respirant et chaud, fabriqué en Europe de manière responsable.",
+        material: "Laine mérinos",
+        tags: [ Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.minimaliste, StylesClothe.decontracte, StylesClothe.elegant],
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.x],
+        womenOrMensWear: .homme
+    ),
+
+    Clothe(
+        name: "Chemise lin casual",
+        brand: BrandName.sezane,
+        price: 95.00,
+        image: "chemise_lin_sezane",
+        description: "Chemise en lin léger, coupe droite, style casual et confortable.",
+        material: "100% lin",
+        tags: [ Tag.bio],
+        type: TypeClothe.haut,
+        style: [StylesClothe.decontracte, StylesClothe.minimaliste, StylesClothe.elegant],
+        morphologyFit: [MorphologyName.a, MorphologyName.h, MorphologyName.v],
+        womenOrMensWear: .unisex
+    ),
+
+    Clothe(
+        name: "Jean Bootcut 202N Evasé",
+        brand: BrandName.milleQuatreVingTrois,
+        price: 129.00,
+        image: "jean_bootcut_202N_evase_1083",
+        description: "Ses jambes évasées en font le jeans parfait pour allonger votre silhouette quelle que soit votre morphologie.",
+        material: "99% coton bio",
+        tags: [ Tag.qualite],
+        type: TypeClothe.bas,
+        style: [StylesClothe.decontracte, StylesClothe.elegant, StylesClothe.rock],
+        morphologyFit: [MorphologyName.v, MorphologyName.x, MorphologyName.o],
+        womenOrMensWear: .femme
+    ),
+    Clothe(
+        name: "Sweat-shirt Hauteville",
+        brand: BrandName.balzac,
+        price: 95.00,
+        image: "sweat_hauteville_balzac",
+        description: "Sweat gris clair chiné, coupe droite, basique et intemporel.",
+        material: "Coton bio",
+        tags: [ Tag.qualite, Tag.local],
+        type: TypeClothe.haut,
+        style: [StylesClothe.decontracte, StylesClothe.streetwear, StylesClothe.minimaliste], // 3 styles
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.x],
+        womenOrMensWear: .homme
+    ),
+
+    Clothe(
+        name: "Chemise Paradis",
+        brand: BrandName.balzac,
+        price: 110.00,
+        image: "chemise_paradis_balzac",
+        description: "Chemise en coton bio avec coupe ajustée, idéale pour un look casual elegant.",
+        material: "100% coton bio",
+        tags: [ Tag.qualite],
+        type: TypeClothe.haut,
+        style: [StylesClothe.minimaliste, StylesClothe.elegant, StylesClothe.decontracte], // 3 styles
+        morphologyFit: [MorphologyName.a, MorphologyName.h, MorphologyName.v],
+        womenOrMensWear: .homme
+    ),
+
+    Clothe(
+        name: "Sweat recyclé",
+        brand: BrandName.hopaal,
+        price: 85.00,
+        image: "sweat_recycle_hopaal",
+        description: "Sweat en coton recyclé, doux et durable, fabriqué en France.",
+        material: "Coton recyclé",
+        tags: [ Tag.upcycler, Tag.madeInFrance],
+        type: TypeClothe.haut,
+        style: [StylesClothe.streetwear, StylesClothe.decontracte, StylesClothe.minimaliste], // 3 styles
+        morphologyFit: [MorphologyName.h, MorphologyName.o, MorphologyName.a],
+        womenOrMensWear: .unisex
+    ),
+
+    Clothe(
+        name: "Veste outdoor recyclée",
+        brand: BrandName.hopaal,
+        price: 190.00,
+        image: "veste_outdoor_hopaal",
+        description: "Veste légère imperméable fabriquée à partir de polyester recyclé, idéale pour la mi-saison.",
+        material: "Polyester recyclé",
+        tags: [ Tag.transparence],
+        type: TypeClothe.veste,
+        style: [StylesClothe.sportwears, StylesClothe.decontracte, StylesClothe.streetwear], // 3 styles
+        morphologyFit: [MorphologyName.v, MorphologyName.x, MorphologyName.o],
+        womenOrMensWear: .homme
+    ),
+
+    Clothe(
+        name: "Sneakers Campo",
+        brand: BrandName.veja,
+        price: 140.00,
+        image: "veja_campo2",
+        description: "Sneakers blanches minimalistes avec détails noirs, fabriquées en cuir écologique.",
+        material: "Cuir écoresponsable et caoutchouc sauvage",
+        tags: [ Tag.qualite, Tag.local, Tag.transparence],
+        type: TypeClothe.chaussures,
+        style: [StylesClothe.minimaliste, StylesClothe.streetwear, StylesClothe.sportwears, StylesClothe.rock], // 4 styles
+        morphologyFit: [MorphologyName.a, MorphologyName.v, MorphologyName.h, MorphologyName.o, MorphologyName.x],
+        womenOrMensWear: .unisex
+    ),
+    Clothe(
+        name: "Le short confort hommes ou mixte en coton bio",
+        brand: BrandName.cotonVert,
+        price: 50.00,
+        image: "short_confort_hm_cb",
+        description: "Tout doux, fluide et solide. Parfait pour être porté en toutes occasions.",
+        material: "100% coton bio",
+        tags: [Tag.qualite, Tag.bio],
+        type: TypeClothe.bas,
+        style: [StylesClothe.decontracte, StylesClothe.sportwears, StylesClothe.streetwear], // 3 styles
+        morphologyFit: [MorphologyName.a, MorphologyName.h, MorphologyName.v], // élargi à 3 morphologies
+        womenOrMensWear: .unisex
+    ),
+
+    Clothe(
+        name: "Le polo français mixte en coton bio",
+        brand: BrandName.cotonVert,
+        price: 49.00,
+        image: "polo_hm_cb",
+        description: "Confortable, bien coupé et solide. Un intemporel à porter en toutes saisons et que vous garderez un bon paquet d'années.",
+        material: "100% coton bio",
+        tags: [Tag.qualite, Tag.bio],
+        type: TypeClothe.haut,
+        style: [StylesClothe.sportwears, StylesClothe.decontracte, StylesClothe.elegant], // 3 styles
+        morphologyFit: [MorphologyName.a, MorphologyName.o, MorphologyName.x], // élargi à 3 morphologies
+        womenOrMensWear: .unisex
+    )
     
 ]
 
 
 var brands: [Brand] = [
-    Brand(
-        name: BrandName.hopaal,
-        logo: "hopaal_logo",
-        description: "Marque française, vêtements éco-conçus et durables",
-        tags: [Tag.upcycler, Tag.transparence],
-        link: "https://www.instagram.com/hopaal.sw?igsh=dGVzbW5lNmN2ZWxk"
-    ),
+
     Brand(
         name: BrandName.milleQuatreVingTrois,
         logo: "1083_logo",
         description: "Jeans & sneakers made in France, coton bio/recyclé et production locale",
         tags: [Tag.local,Tag.grandeTaille],
         link: "https://1083.fr"
+    ),
+    Brand(
+        name: BrandName.cotonVert,
+        logo: "cotonvert_logo",
+        description: "Basics en coton bio, simples, durables et accessibles",
+        tags: [Tag.justePrix, Tag.grandeTaille],
+        link: "https://cotonvert.com"
+    ),
+    Brand(
+        name: BrandName.petiteAndSoWhat,
+        logo: "petiteandso_logo",
+        description: "Mode pour petites tailles, coupes adaptatives et modèles durables",
+        tags: [Tag.petiteTaille],
+        link: "https://www.petiteandsowhat.com/"
+    ),
+    Brand(
+        name: BrandName.balzac,
+        logo: "balzac_logo",
+        description: "Casual elegant éthique, en coton bio et fabrication responsable",
+        tags: [ Tag.justePrix],
+        link: "https://balzac-paris.fr"
     ),
     Brand(
         name: BrandName.ekyog,
@@ -443,16 +1116,10 @@ var brands: [Brand] = [
         name: BrandName.sezane,
         logo: "sezane_logo",
         description: "Mode élégante et responsable avec des matériaux de qualité et séries limitées",
-        tags: [Tag.qualite, Tag.eco],
+        tags: [Tag.qualite],
         link: "https://sezane.com"
     ),
-    Brand(
-        name: BrandName.balzac,
-        logo: "balzac_logo",
-        description: "Casual chic éthique, en coton bio et fabrication responsable",
-        tags: [Tag.eco, Tag.justePrix],
-        link: "https://balzac-paris.fr"
-    ),
+    
     Brand(
         name: BrandName.lesRecuperables,
         logo: "lesrecuperables_logo",
@@ -464,35 +1131,30 @@ var brands: [Brand] = [
         name: BrandName.makeMyLimonade,
         logo: "limonade_logo",
         description: "Mode créative, colorée, pièces ludiques et féminines, durables",
-        tags: [Tag.eco, Tag.bio],
+        tags: [ Tag.bio],
         link: "https://makemylemonade.com"
     ),
     Brand(
-        name: BrandName.cotonVert,
-        logo: "cotonvert_logo",
-        description: "Basics en coton bio, simples, durables et accessibles",
-        tags: [Tag.justePrix, Tag.grandeTaille],
-        link: "https://www.instagram.com/cotonvert?igsh=ZXljMDY0OWdobGV6"
+        name: BrandName.hopaal,
+        logo: "hopaal_logo",
+        description: "Marque française, vêtements éco-conçus et durables",
+        tags: [Tag.upcycler, Tag.transparence],
+        link: "https://www.instagram.com/hopaal.sw?igsh=dGVzbW5lNmN2ZWxk"
     ),
+   
     Brand(
         name: BrandName.lesPetitesAmbitieuses,
-        logo: "les_petites_ambicieuses_logo",
+        logo: "les_petites_ambitieuses_logo",
         description: "Mode petites tailles, confortable, adaptable et durable",
-        tags: [Tag.petiteTaille, Tag.eco],
+        tags: [Tag.petiteTaille],
         link: "https://www.instagram.com/lespetitesambitieuses?igsh=M3Q4eGJlMzZjMnVz"
     ),
-    Brand(
-        name: BrandName.petiteAndSoWhat,
-        logo: "petiteandso_logo",
-        description: "Mode pour petites tailles, coupes adaptatives et modèles durables",
-        tags: [Tag.petiteTaille, Tag.eco],
-        link: "https://www.petiteandsowhat.com/"
-    ),
+   
     Brand(
         name: BrandName.carrousselClothing,
         logo: "carroussel_logo",
         description: "Accessoires recyclés, ceintures et sacs à partir de textiles revalorisés",
-        tags: [Tag.upcycler, Tag.eco],
+        tags: [Tag.upcycler],
         link: "https://carrouselfrance.com/"
     ),
     Brand(
@@ -520,7 +1182,7 @@ var brands: [Brand] = [
         name: BrandName.veja,
         logo: "veja",
         description: "Baskets éthiques, production respectueuse et logistique sociale",
-        tags: [Tag.eco, Tag.petiteTaille],
+        tags: [ Tag.petiteTaille],
         link: "https://www.veja-store.com/fr_fr/search?q=Sneakers+Veja+Rio+Branco&search-button="
     )
 ]
@@ -621,21 +1283,21 @@ var fashionTipsBodyShapeX = [
 var faqs: [FAQ] = [
     
     FAQ(
-        question: "🌍 Qu'est-ce que la mode éco-responsable ?",
+        question: "🌍Qu'est-ce que la mode éco-responsable ?",
         answer: "Produire dans de bonnes conditions, et de façon raisonnée pour éviter la surproduction, tout en utilisant des matières durables à faible impact environnemental."
         
     ),
     FAQ(
-        question: "⚡️ Qu'est-ce que la fast fashion et quel est son impact environnemental ?",
+        question: "⚡️Qu'est-ce que la fast fashion et quel est son impact environnemental ?",
         answer: "C'est un mouvement qui désigne la production rapide et à bas coût de vêtements inspirés des tendances. Son impact environnemental est considérable : surproduction, gaspillage, forte consommation d’eau, usage massif de produits chimiques et émissions de CO₂ liées au transport."
     ),
     
     FAQ(
-        question: "🐢 Qu’est-ce que la slow fashion ?",
+        question: "🐢Qu’est-ce que la slow fashion ?",
         answer: "C’est un mouvement qui encourage l’achat de vêtements durables, de qualité, produits de manière éthique et consommés de façon réfléchie."
     ),
     FAQ(
-        question: "🔎 Comment savoir si un vêtement est réellement éco-responsable ?",
+        question: "🔎Comment savoir si un vêtement est réellement éco-responsable ?",
         answer: "Vérifiez les certifications, labels et informations sur la provenance des matériaux et le processus de fabrication."
     ),
     FAQ(
@@ -644,39 +1306,39 @@ var faqs: [FAQ] = [
     ),
     
     FAQ(
-        question: "♻️ Comment réduire l’impact environnemental de ma garde-robe ?",
+        question: "♻️Comment réduire l’impact environnemental de ma garde-robe ?",
         answer: "Achetez moins mais mieux, privilégiez les marques durables. Réparez ou transformez vos vêtements (upcycling), donnez-les à des associations, vendez-les d’occasion ou recyclez-les via des points de collecte textiles."),
 
     FAQ(
-        question: "🧵 Pourquoi privilégier les vêtements en matières recyclées ?",
+        question: "🧵Pourquoi privilégier les vêtements en matières recyclées ?",
         answer: "Ils réduisent la consommation de ressources naturelles, limitent les déchets textiles et diminuent l’empreinte écologique."
     ),
     FAQ(
-        question: "🇫🇷 Quels sont les bénéfices d’acheter local et made in France ?",
+        question: "🇫🇷Quels sont les bénéfices d’acheter local et made in France ?",
         answer: "Cela favorise l’économie locale, réduit l’empreinte carbone liée au transport et garantit souvent une meilleure qualité et traçabilité."
     ),
     
     FAQ(
-        question: "👖 Comment entretenir un jean en coton bio ?",
+        question: "👖Comment entretenir un jean en coton bio ?",
         answer: "Lavez-le à l'envers à basse température, évitez le sèche-linge pour préserver la couleur et les fibres et utilisez des lessives écologiques."
         
     ),
     
     FAQ(
-        question: "⏳ Comment identifier les pièces intemporelles ?",
+        question: "⏳Comment identifier les pièces intemporelles ?",
         answer: "Ce sont des vêtements aux coupes classiques, aux couleurs neutres et de qualité, qui restent élégants au fil des saisons."),
     
     FAQ(
-        question: "🧣 Quels accessoires choisir selon ma morphologie ?",
+        question: "🧣Quels accessoires choisir selon ma morphologie ?",
         answer: "Par exemple, des ceintures fines pour marquer la taille, des colliers longs pour allonger la silhouette ou des boucles d’oreilles proportionnées au visage."
         
     ),
     FAQ(
-        question: "📐 Comment ajuster une tenue à ma silhouette ?",
+        question: "📐Comment ajuster une tenue à ma silhouette ?",
         answer: "Choisissez des coupes qui équilibrent votre morphologie et mettez en valeur vos atouts, par exemple une taille cintrée pour un effet sablier."
     ),
     FAQ(
-        question: "🎨 Comment associer des couleurs pour un look harmonieux ?",
+        question: "🎨Comment associer des couleurs pour un look harmonieux ?",
         answer: "Privilégiez des combinaisons de 2 à 3 couleurs complémentaires ou neutres pour un rendu équilibré."
         
         
@@ -691,7 +1353,7 @@ var shopsEcoLille: [Shop] = [
         adress: "128 rue Gambetta, 59000 Lille",
         coordinates: CLLocationCoordinate2D(latitude: 50.6269, longitude: 3.0466),
         openingHours: ["Lundi-Samedi: 10h-19h", "Dimanche: fermé"],
-        tags: [Tag.eco, Tag.local, .madeInFrance, .qualite, .upcycler, .transparence],
+        tags: [ Tag.local, .madeInFrance, .qualite, .upcycler, .transparence],
         goodToKnow: ["Concept store éco-conçu", "Mode, maison, enfant", "Selection d’articles zéro-déchet"]
     ),
     Shop(
@@ -700,7 +1362,7 @@ var shopsEcoLille: [Shop] = [
         adress: "89 rue de la Monnaie, 59000 Lille",
         coordinates: CLLocationCoordinate2D(latitude: 50.6415, longitude: 3.0617),
         openingHours: ["Lundi: 11h-19h", "Mardi-Samedi: 10h-19h", "Dimanche: fermé"],
-        tags: [.eco, Tag.local, .qualite, .madeInFrance, .transparence],
+        tags: [ Tag.local, .qualite, .madeInFrance, .transparence],
         goodToKnow: ["Petite sœur du concept store de Wazemmes", "Boutique lumineuse", "Mode, décoration, accessoires"]
     ),
     Shop(
@@ -709,7 +1371,7 @@ var shopsEcoLille: [Shop] = [
         adress: "16 place des Patiniers, 59800 Lille",
         coordinates: CLLocationCoordinate2D(latitude: 50.6396, longitude: 3.0595),
         openingHours: ["Lundi-Samedi: 10h-19h", "Dimanche: fermé ou horaires réduits"],
-        tags: [.eco, Tag.local, .transparence, .qualite],
+        tags: [ Tag.local, .transparence, .qualite],
         goodToKnow: ["Marque engagée", "Chaque achat plante un arbre", "Vêtements & accessoires homme/femme"]
     ),
     Shop(
@@ -718,7 +1380,7 @@ var shopsEcoLille: [Shop] = [
         adress: "9 rue de la Vieille Comédie, 59800 Lille",
         coordinates: CLLocationCoordinate2D(latitude: 50.6384, longitude: 3.0632),
         openingHours: ["Lundi-Samedi: 11h-19h", "Dimanche: fermé"],
-        tags: [.eco, .transparence, .madeInFrance, Tag.local, .qualite],
+        tags: [ .transparence, .madeInFrance, Tag.local, .qualite],
         goodToKnow: ["Boutique de mode éthique femme", "Sélection de marques engagées", "Bijoux, accessoires inclus"]
     ),
     Shop(
@@ -727,7 +1389,7 @@ var shopsEcoLille: [Shop] = [
         adress: "63 rue Pierre Mauroy, 59800 Lille",
         coordinates: CLLocationCoordinate2D(latitude: 50.6347, longitude: 3.0665),
         openingHours: ["Mardi-Samedi: 11h-18h", "Dimanche-Lundi: fermé"],
-        tags: [.friperie, .eco, .qualite, .justePrix, .transparence],
+        tags: [.friperie,  .qualite, .justePrix, .transparence],
         goodToKnow: ["Vêtements seconde main", "Soigneusement sélectionnés", "Atmosphère vintage / rétro"]
     ),
     Shop(
@@ -736,7 +1398,7 @@ var shopsEcoLille: [Shop] = [
         adress: "12 rue Basse, 59800 Lille",
         coordinates: CLLocationCoordinate2D(latitude: 50.6416, longitude: 3.0611),
         openingHours: ["Mardi-Samedi: 11h-19h", "Lundi & Dimanche: fermé"],
-        tags: [.eco, .transparence, .bio, .qualite],
+        tags: [ .transparence, .bio, .qualite],
         goodToKnow: ["Lingerie éco-conçue", "Matières recyclées ou naturelles"]
     ),
     Shop(
@@ -745,7 +1407,7 @@ var shopsEcoLille: [Shop] = [
         adress: "161 rue Jean Jaurès, 59491 Villeneuve-d’Ascq",
         coordinates: CLLocationCoordinate2D(latitude: 50.6161, longitude: 3.1385),
         openingHours: ["Lundi-Samedi: 10h-19h", "Dimanche: fermé"],
-        tags: [.eco, Tag.local, .transparence, .justePrix, .qualite],
+        tags: [ Tag.local, .transparence, .justePrix, .qualite],
         goodToKnow: ["Produits pour maison, déco, accessoires durables", "Made in France privilégié"]),
     Shop(
         name: "La Cabane d’Antoine",
@@ -753,7 +1415,7 @@ var shopsEcoLille: [Shop] = [
         adress: "69 rue Abbé Desplanques, 59130 Lambersart",
         coordinates: CLLocationCoordinate2D(latitude: 50.6501, longitude: 3.0207),
         openingHours: ["Mardi-Samedi: 10h-18h", "Lundi & Dimanche: fermé"],
-        tags: [.eco, Tag.local, .qualite, .bio],
+        tags: [ Tag.local, .qualite, .bio],
         goodToKnow: ["Concept store familial", "Jeux & jouets en bois, accessoires zéro-déchet"]
     ),
     Shop(
@@ -762,9 +1424,38 @@ var shopsEcoLille: [Shop] = [
         adress: "8 Rue Saint-Pierre Saint-Paul, Lille",
         coordinates: CLLocationCoordinate2D(latitude: 50.6368, longitude: 3.0619),
         openingHours: ["Lundi-Samedi: 10h-12h30, 14h-19h","Dimanche: 9h30-13h30"],
-        tags: [.friperie, .eco, Tag.local],
+        tags: [.friperie,  Tag.local],
         goodToKnow: ["Téléphone: 03 28 07 32 81", "Boutique du réseau Le Relais — vêtements seconde main"]
     ),
+    Shop(
+            name: "Make My Lemonade",
+            logo: "limonade_logo",
+            adress: "11-13 place Louise de Bettignies, 59000 Lille",
+            coordinates: CLLocationCoordinate2D(latitude: 50.64105, longitude: 3.0648854),
+            openingHours: ["Lundi-Samedi: 10h-19h", "Dimanche: fermé"],
+            tags: [Tag.local, .qualite, .transparence],
+            goodToKnow: ["Ligne DIY avec patrons de couture", "Grandes tailles disponibles jusqu'au 52"]
+        ),
+        
+        Shop(
+            name: "Balzac Paris",
+            logo: "balzac_logo",
+            adress: "16 rue des Chats Bossus, 59000 Lille",
+            coordinates: CLLocationCoordinate2D(latitude: 50.639640, longitude: 3.064100),
+            openingHours: ["Lundi-Samedi: 10h-19h", "Dimanche: fermé"],
+            tags: [Tag.local, .friperie, .qualite, .transparence],
+            goodToKnow: ["Collections limitées pour éviter la surproduction", "Boutique de mode éthique femme"]
+        ),
+        
+        Shop(
+            name: "FRIP'UP",
+            logo: "frip_up_logo",
+            adress: "79 Rue Léon Gambetta, 59000 Lille",
+            coordinates: CLLocationCoordinate2D(latitude: 50.63163, longitude: 3.05980),
+            openingHours: ["Lundi-Samedi: 11h-19h", "Dimanche: fermé"],
+            tags: [Tag.local, .friperie],
+            goodToKnow: ["Vêtements seconde main", "Accessible aux personnes à mobilité réduite"]
+        ),
 ]
 
 

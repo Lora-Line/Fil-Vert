@@ -134,7 +134,7 @@ struct MapPage: View {
                             HStack() {
                                 //Toggle button (glass)
                                 Button(action: { withAnimation { isExpanded.toggle() } }) {
-                                    Image(systemName: "line.3.horizontal.decrease")
+                                    Image(systemName: "slider.vertical.3")
                                         .frame(width: 32, height: 44)
                                         .font(.system(size: 20, weight: .semibold))
                                 }
@@ -218,7 +218,7 @@ struct MapPage: View {
                 */
                 .toolbar {
                     ToolbarItem(placement: .principal) {
-                        Text("Carte")
+                        Text("Magasins")
                             .gupterFont(size:36)
                     }
                 }
@@ -257,7 +257,7 @@ struct MapPage: View {
                                         Spacer()
                                     }
                                     Spacer()
-                                    Text(shop.name).SFProFont(weight: .medium, size: 20)
+                                    Text(shop.name).SFProFont(weight: .medium, size: 22)
                                     Spacer()
                                     
                                 }.padding()
@@ -270,7 +270,7 @@ struct MapPage: View {
                                     TagFlow(spacing: 8, lineSpacing: 8) {
                                         ForEach(shop.tags, id: \.self) { tag in
                                             Text(tag.rawValue).textCase(.uppercase)
-                                                .SFProFont(weight: .mediumTerra, size: 12)
+                                                .SFProFont(weight: .mediumTerra, size: 14)
                                                 .padding(.vertical, 6)
                                                 .padding(.horizontal, 10)
                                                 .background(Color.terra.opacity(0.18))
@@ -288,9 +288,9 @@ struct MapPage: View {
                                         HStack {
                                             Image(systemName: "mappin.and.ellipse").padding(.horizontal).font(.system(size: 24)).foregroundStyle(.deepGreen)
                                             VStack(alignment: .leading) {
-                                                Text(shop.name).SFProFont(weight: .bold, size: 20)
+                                                Text(shop.name).SFProFont(weight: .bold, size: 22)
                                                 
-                                                Text(shop.adress).SFProFont(weight: .regular, size: 16)
+                                                Text(shop.adress).SFProFont(weight: .regular, size: 19)
                                             }.padding(.vertical)
                                             Spacer()
                                         }.glassEffect(in: .rect(cornerRadius: 16.0))
@@ -299,22 +299,22 @@ struct MapPage: View {
                                         HStack {
                                             Image(systemName: "mappin.and.ellipse").padding(.horizontal).font(.system(size: 24)).foregroundStyle(.deepGreen)
                                             VStack(alignment: .leading) {
-                                                Text(shop.name).SFProFont(weight: .bold, size: 20)
+                                                Text(shop.name).SFProFont(weight: .bold, size: 22)
                                                 
-                                                Text(shop.adress).SFProFont(weight: .regular, size: 16)
+                                                Text(shop.adress).SFProFont(weight: .regular, size: 19)
                                             }.padding(.vertical)
                                             Spacer()
                                         }.background(.almostWhite.opacity(0.5))
                                         .cornerRadius(16)
                                         .padding(.horizontal)
                                     }
-                                    Text("Horaires").padding(.top).SFProFont(weight: .mediumMidGreen, size: 16)
+                                    Text("Horaires").padding(.top).SFProFont(weight: .mediumMidGreen, size: 19)
                                     if #available(iOS 26.0, *) {
                                         HStack {
                                             Image(systemName: "calendar").padding(.horizontal).font(.system(size: 24)).foregroundStyle(.deepGreen)
                                             VStack(alignment: .leading) {
                                                 ForEach(shop.openingHours, id: \.self) { hour in
-                                                    Text(hour).SFProFont(weight: .regular, size: 16)}
+                                                    Text(hour).SFProFont(weight: .regular, size: 19)}
                                             }
                                             Spacer()
                                         }.padding(.vertical)
@@ -325,7 +325,7 @@ struct MapPage: View {
                                             Image(systemName: "calendar").padding(.horizontal).font(.system(size: 24)).foregroundStyle(.deepGreen)
                                             VStack(alignment: .leading) {
                                                 ForEach(shop.openingHours, id: \.self) { hour in
-                                                    Text(hour).SFProFont(weight: .regular, size: 16)}
+                                                    Text(hour).SFProFont(weight: .regular, size: 19)}
                                             }
                                             Spacer()
                                         }.padding(.vertical)
@@ -335,13 +335,13 @@ struct MapPage: View {
                                     }
                                     
                                     
-                                    Text("Bon à savoir").padding(.top).SFProFont(weight: .mediumMidGreen, size: 16)
+                                    Text("Bon à savoir").padding(.top).SFProFont(weight: .mediumMidGreen, size: 19)
                                     if #available(iOS 26.0, *) {
                                         HStack {
                                             Image(systemName: "info").padding(.horizontal).font(.system(size: 24)).foregroundStyle(.deepGreen)
                                             VStack(alignment: .leading) {
                                                 ForEach(shop.goodToKnow, id: \.self) { hour in
-                                                    Text(hour).SFProFont(weight: .regular, size: 16)
+                                                    Text(hour).SFProFont(weight: .regular, size: 19)
                                                         .lineLimit(nil)
                                                         .fixedSize(horizontal: false, vertical: true)
                                                 }
@@ -355,7 +355,7 @@ struct MapPage: View {
                                             Image(systemName: "info").padding(.horizontal).font(.system(size: 24)).foregroundStyle(.deepGreen)
                                             VStack(alignment: .leading) {
                                                 ForEach(shop.goodToKnow, id: \.self) { hour in
-                                                    Text(hour).SFProFont(weight: .regular, size: 16)
+                                                    Text(hour).SFProFont(weight: .regular, size: 19)
                                                         .lineLimit(nil)
                                                         .fixedSize(horizontal: false, vertical: true)
                                                 }

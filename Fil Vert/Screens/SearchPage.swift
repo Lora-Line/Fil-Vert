@@ -23,7 +23,7 @@ struct SearchPage: View {
     @State private var selectedFilters: [Tag] = []
     @State var searchText: String = ""
     
-    @State private var isExpanded: Bool = false
+    @State private var isExpanded: Bool = true
     @Namespace private var filterNamespace
     @State var generatedItems = [AnyView]()
     
@@ -87,6 +87,7 @@ struct SearchPage: View {
     
     
     var body: some View {
+        
         /*
          Structure de la vue
          - NavigationStack -> ZStack -> VStack.
@@ -97,7 +98,9 @@ struct SearchPage: View {
                 Color.floralWhite.ignoresSafeArea()
                 
                 VStack(spacing: 0) {
-                    ScrollView {
+                    
+                    ScrollView(showsIndicators: false) {
+                        Spacer(minLength: 50)
                         VStack(alignment: .leading) {
                             ForEach(Array(generatedItems.enumerated()), id: \.offset) { index, brand in
                                 
@@ -128,7 +131,7 @@ struct SearchPage: View {
                             HStack() {
                                 //Toggle button (glass)
                                 Button(action: { withAnimation { isExpanded.toggle() } }) {
-                                    Image(systemName: "line.3.horizontal.decrease")
+                                    Image(systemName: "slider.vertical.3")
                                         .frame(width: 32, height: 44)
                                         .font(.system(size: 20, weight: .semibold))
                                 }
@@ -143,12 +146,15 @@ struct SearchPage: View {
                                         HStack(spacing: 8) {
                                             ForEach(Array(Tag.allCases.enumerated()), id: \.element) { index, tag in
                                                 Button {
-                                                    if selectedFilters.contains(tag) {
-                                                        selectedFilters.removeAll { $0 == tag }
-                                                    } else {
-                                                        selectedFilters.append(tag)
+                                                    withAnimation {
+                                                        if selectedFilters.contains(tag) {
+                                                            selectedFilters.removeAll { $0 == tag }
+                                                        } else {
+                                                            selectedFilters.append(tag)
+                                                        }
+                                                        
+                                                        generateItem()
                                                     }
-                                                    generateItem()
                                                 } label: {
                                                     Text(tag.rawValue)
                                                         .padding(.vertical, 8)
@@ -218,17 +224,24 @@ struct SearchPage: View {
              */
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Recherche")
+                    Text("Marques")
                         .gupterFont(size:36)
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
         }
-        .searchable(text: $searchText, prompt: "Rechercher une marque")
+        
+            
         .accentColor(.terra)
         .onAppear{
             generateItem()
         }
+        .searchable(text: $searchText, prompt: "Rechercher une marque")
+        .onChange(of: searchText) {
+            generateItem()
+            
+        }
+        
     }
 }
 

@@ -1,11 +1,3 @@
-/*
- AdviceCard.swift
- ----------------
- Composant "pile de cartes" de conseils.
- - Affiche des conseils éco-responsables + adaptés à la morphologie.
- - Interaction: drag & swipe de la carte du dessus, réinsertion en bas de pile.
-*/
-
 //
 //  AdviceCard.swift
 //  FilVert
@@ -26,7 +18,8 @@ struct AdviceCard: View {
     @State private var cardOrder: [Int] = []
     @State private var dragOffset: CGSize = .zero
     @State private var isDraggingTop: Bool = false
-
+    @State private var appearOffset: CGFloat = 0
+    @State private var appearRotation: Double = 0
     /*
      Apparence des cartes
      - cardCount: nombre d'indices visibles dans la pile.
@@ -86,11 +79,39 @@ struct AdviceCard: View {
                                                   onSwipedAway: { direction in
                         swipeTopCardAway(direction: direction)
                     }))
+                    .offset(x: isTop ? appearOffset : 0)
+                    .rotationEffect(.degrees(isTop ? appearRotation : 0))
             }
         }
         .frame(width: cardSize, height: cardSize)
         .animation(.spring(response: 0.35, dampingFraction: 0.85, blendDuration: 0.1), value: cardOrder)
         .animation(.spring(response: 0.25, dampingFraction: 0.9, blendDuration: 0.1), value: dragOffset)
+        .onAppear { // annimation d'apparition
+            withAnimation(.easeInOut(duration: 0.25)) {
+                appearOffset = -80
+                appearRotation = -8
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                withAnimation(.easeInOut(duration: 0.25)) {
+                    appearOffset = 0
+                    appearRotation = 0
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                    withAnimation(.easeInOut(duration: 0.25)) {
+                        appearOffset = 80
+                        appearRotation = 8
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                        withAnimation(.easeInOut(duration: 0.25)) {
+                            appearOffset = 0
+                            appearRotation = 0
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
 
     /*
@@ -240,13 +261,14 @@ private struct CardView: View {
                     .gupterFont(size: 26)
                 
                 Text(text)
-                    .SFProFont(weight: .regular, size: 20)
+                    .SFProFont(weight: .regular, size: 19)
                     .multilineTextAlignment(.center)
                     .padding(20)
             }
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Text(text))
+        .zIndex(10)
     }
 }
 

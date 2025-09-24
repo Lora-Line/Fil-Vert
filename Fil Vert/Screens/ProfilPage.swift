@@ -16,6 +16,11 @@
 
 import SwiftUI
 
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
 
 struct ProfilPage: View {
     /*
@@ -27,8 +32,20 @@ struct ProfilPage: View {
     @ObservedObject var measurements = users[0].measurement
     @State var resultMorph: MorphologyName = users[0].morphology
     @State var selectedMorph: MorphologyName = users[0].morphology
+    @State private var showSavedMessage = false
     
-    
+    func showSavedNotification() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            withAnimation(.spring()) {
+                showSavedMessage = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                withAnimation(.spring()) {
+                    showSavedMessage = false
+                }
+            }
+        }
+    }
     /*
      determineMorphology
      - Détermine la morphologie à partir des mensurations.
@@ -62,8 +79,24 @@ struct ProfilPage: View {
         let selectedIndex: Int = allMorphs.firstIndex(where: { $0.name == user.morphology }) ?? 0
         
         NavigationStack {
-            ZStack {
+            ZStack(alignment: .topTrailing) {
                 Color.floralWhite.ignoresSafeArea() //chage la couleur du font
+                if showSavedMessage {
+                    HStack {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(.green)
+                        Text("Modifications enregistrées")
+                            .font(.callout)
+                            .fontWeight(.medium)
+                    }
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 10)
+                    .glassEffect()
+                    .padding(.trailing) // espace depuis le bord droit
+                    .transition(.move(edge: .top).combined(with: .opacity))
+                    .zIndex(1)
+                }
+                
                 ScrollView {
                     /*
                      Section: A propos de toi
@@ -72,32 +105,35 @@ struct ProfilPage: View {
                     */
                     VStack {
                         HStack { //titre premiere section
-                            Text("A propos de toi").gupterFont(size:24)
+                            Text("A propos de toi").gupterFont(size:30)
                             Spacer()
                         }
                         VStack(alignment: .leading, spacing: 12) {
                             HStack { //champ prenom
                                 Text("Ton prénom")
-                                    .SFProFont(weight: .regular, size:16)
+                                    .SFProFont(weight: .regular, size:19)
                                 
                                 
                                 TextField(text: $user.name, prompt: Text("Ton Prénom")) {}
                                     .onChange(of: user.name) { oldValue, newValue in
                                         user.name = newValue //met a jour la valeur du nom
+                                        showSavedNotification()
                                     }
-                                    .multilineTextAlignment(.trailing).SFProFont(weight:.mediumTerra, size:16)
+                                    .multilineTextAlignment(.trailing).SFProFont(weight:.regularTarra, size:19)
                                 
                             }
                             Divider()
                             HStack {
                                 Text("Tu t’identifie en tant que")
-                                    .SFProFont(weight: .regular, size:16)
+                                    .SFProFont(weight: .regular, size:19)
                                 Spacer()
                                 Picker("Sexe", selection: $user.sexe) {
                                     ForEach(sexes, id: \.self) { option in
                                         Text(option.rawValue)
-                                            .tag(option)
+                                        .tag(option)
                                     }
+                                }.onChange(of: user.sexe) { _ in
+                                    showSavedNotification()
                                 }
                             }
                             .pickerStyle(.menu)
@@ -140,7 +176,7 @@ struct ProfilPage: View {
                         
                       
                         Text(user.morphology.rawValue)
-                            .SFProFont(weight: .medium, size: 16)
+                            .SFProFont(weight: .medium, size: 19)
                             .foregroundColor(.primary)
                             .padding(.vertical, 8)
                     }
@@ -150,7 +186,7 @@ struct ProfilPage: View {
                      - Titre et sous-titre d'explication.
                     */
                     HStack{
-                        Text("Styles préférés").gupterFont(size:24)
+                        Text("Styles préférés").gupterFont(size:30)
                         Spacer()
                     }.padding(.bottom,4)
                     HStack{
@@ -170,6 +206,7 @@ struct ProfilPage: View {
                                 } else {
                                     user.styles.append(style.name) //si il y est pas on l'ajoute
                                 }
+                                showSavedNotification()
                             }) {
                                 StyleCard(
                                     style: style,
@@ -180,6 +217,8 @@ struct ProfilPage: View {
                     }.padding(.bottom, 24)
                 }
                 .padding(.horizontal)
+            }.onTapGesture {
+                UIApplication.shared.endEditing()
             }
             /*
              Toolbar & navigation

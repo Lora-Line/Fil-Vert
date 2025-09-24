@@ -30,13 +30,13 @@ struct SuggestionRow: View {
                             
                             HStack {
                                 Text(clothe.brand.rawValue)
-                                    .SFProFont(weight: .regular, size: 16)
+                                    .SFProFont(weight: .regular, size: 17)
                                 Spacer()
-                                Text("\(clothe.price, specifier: "%.2f")€")
-                                    .SFProFont(weight: .regular, size: 16)
+                               // Text("\(clothe.price, specifier: "%.2f")€")
+                               //     .SFProFont(weight: .regular, size: 17)
                             }
                             Text(clothe.name)
-                                .SFProFont(weight:.regular, size: 18)
+                                .SFProFont(weight:.regular, size: 19)
                             
                             
                         }

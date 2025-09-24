@@ -25,7 +25,7 @@ struct StyleCard: View {
                     .cornerRadius(12)
                 
                 Text(style.name.rawValue)
-                    .SFProFont(weight: .medium, size: 16)
+                    .SFProFont(weight: .medium, size: 19)
                     .frame(maxWidth: .infinity)
                     .padding(.top, 8)
             }
