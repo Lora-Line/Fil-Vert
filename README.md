@@ -51,8 +51,11 @@ Many fashion enthusiasts who care about the environment struggle to find clothin
 
 ## 📸 Screenshots
 
-<img width="3000" height="2250" alt="mockup" src="https://github.com/user-attachments/assets/f7269afe-3895-4c56-a595-74908e81d303" />
-
+<img width="590" height="1278" alt="IMG_0007" src="https://github.com/user-attachments/assets/4156ffbf-b4f6-4eea-a916-376f7218a03a" />
+<img width="590" height="1278" alt="IMG_0004" src="https://github.com/user-attachments/assets/aa356504-b4e1-46db-bfbb-69e61bd3da15" />
+<img width="590" height="1278" alt="IMG_0005" src="https://github.com/user-attachments/assets/5217c93d-0f22-4a5b-a386-fe191388a97e" />
+<img width="590" height="1278" alt="IMG_0006" src="https://github.com/user-attachments/assets/cba59d7d-651c-4426-9c6b-cf70ffdc29df" />
+<img width="590" height="1278" alt="IMG_0003" src="https://github.com/user-attachments/assets/1525445f-028e-4f63-8a9e-8b8f840e18a3" />
 
 ---
 
