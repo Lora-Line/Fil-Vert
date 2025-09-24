@@ -1400,6 +1400,34 @@ var shopsEcoLille: [Shop] = [
             tags: [Tag.local, .friperie],
             goodToKnow: ["Vêtements seconde main", "Accessible aux personnes à mobilité réduite"]
         ),
+    Shop(
+            name: "Chez Henry Lille - Croix-Rouge française",
+            logo: "chez_henri_logo",
+            adress: "158 Rue Léon Gambetta, 59000 Lille",
+            coordinates: CLLocationCoordinate2D(latitude: 50.631587, longitude: 3.059782),
+            openingHours: ["Mercredi: 14h-18h", "Jeudi-Samedi: 10h-18h30", "Dimanche, lundi, mardi: fermé"],
+            tags: [Tag.local, .friperie],
+            goodToKnow: ["Téléphone: 03 20 16 98 60", "Vêtements seconde main"]
+        ),
+    Shop(
+            name: "Boutique solidaire aux carrés",
+            logo: "boutique_solidaire_au_carre_logo",
+            adress: "210 rue d'Arras, 59000 Lille",
+            coordinates: CLLocationCoordinate2D(latitude: 50.61780, longitude: 3.06220),
+            openingHours: ["Lundi-Jeudi: 14h-18h", "Vendredi-Dimanche: fermé"],
+            tags: [Tag.local, .friperie],
+            goodToKnow: ["Téléphone: 07 44 40 88 31", "Vêtements seconde main", "Petits prix"]
+        ),
+    Shop(
+            name: "Les Djadjas",
+            logo: "les_djadjas_logo",
+            adress: "255 Rue de la Barre, 59000 Lille",
+            coordinates: CLLocationCoordinate2D(latitude: 50.63853, longitude: 3.05566),
+            openingHours: ["Mercredi-Samedi: 14h-19h", "Dimanche-Mardi: fermé"],
+            tags: [Tag.local, .friperie],
+            goodToKnow: ["Téléphone: 07 71 76 66 38", "Vêtements seconde main", "Projets DIY", "Ateliers collaboratifs"]
+        ),
+
 ]
 
 
